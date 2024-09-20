@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?orkqwr');
+  src:  url('fonts/icomoon.eot?orkqwr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?orkqwr') format('truetype'),
+    url('fonts/icomoon.woff?orkqwr') format('woff'),
+    url('fonts/icomoon.svg?orkqwr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tick:before {
+  content: "\e913";
+}
+.icon-magnifying-glass:before {
+  content: "\e900";
+}
+.icon-shopping-cart:before {
+  content: "\e901";
+}
+.icon-right-arrow:before {
+  content: "\e902";
+}
+.icon-furnitures:before {
+  content: "\e903";
+}
+.icon-buildings:before {
+  content: "\e904";
+}
+.icon-house-design:before {
+  content: "\e905";
+}
+.icon-architect:before {
+  content: "\e906";
+}
+.icon-architect-1:before {
+  content: "\e907";
+}
+.icon-architect-2:before {
+  content: "\e908";
+}
+.icon-measure:before {
+  content: "\e909";
+}
+.icon-blueprint:before {
+  content: "\e90a";
+}
+.icon-kitchen:before {
+  content: "\e90b";
+}
+.icon-architect-3:before {
+  content: "\e90c";
+}
+.icon-architect-4:before {
+  content: "\e90d";
+}
+.icon-architect-5:before {
+  content: "\e90e";
+}
+.icon-satisfaction:before {
+  content: "\e90f";
+}
+.icon-team:before {
+  content: "\e910";
+}
+.icon-checklist:before {
+  content: "\e911";
+}
+.icon-outsourcing:before {
+  content: "\e912";
+}
