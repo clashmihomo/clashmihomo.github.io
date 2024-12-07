@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashmihomo.github.io/news/article-22511.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spring Boot四大神器之Auto Configuration</title>
+        <meta name="description" content="Spring Boot非常简单容易上手，它隐藏了很多内容而不需要你去关心。但对于一个好的开发人员也许希望知道Spring Boot自动配置背后到底发生了什么？ Spring Boot并不属于一种新的技" />
+        <link rel="icon" href="__ADDON__/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN7DJKT3D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZN7DJKT3D0');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>Clash Mihomo</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>Spring Boot四大神器之Auto Configuration</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                          				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>Spring Boot非常简单容易上手，它隐藏了很多内容而不需要你去关心。但对于一个好的开发人员也许希望知道Spring Boot自动配置背后到底发生了什么？</p> <p>Spring Boot并不属于一种新的技术，只不过Spring Boot的启动器帮我们配置了若干个被Spring管理的bean，当我们的项目依赖这些jar并启动Spring应用时，Spring的Container容器已经把jar包下的对象加以创建及管理了。</p> <p>简而言之，Spring Boot自动配置代表了一种基于类路径上存在的依赖关系自动配置Spring应用程序的方法。还可以通过定义消除自动配置类中包含的某些bean。这些可以使开发更快更容易。</p> <h2> <a id="1_Spring_Boot_6" rel="nofollow"></a>1. 通过启动类创建Spring Boot应用</h2> <p>创建Spring Boot应用非常简单，只要创建一个包含main的启动类即可。</p> <pre><code>import org.springframework.boot.SpringApplication; import org.springframework.boot.autoconfigure.SpringBootApplication; import org.springframework.context.ApplicationContext;   @SpringBootApplication public class App {     public static void main(String[] args)     {         ApplicationContext ctx = SpringApplication.run(App.class, args);     } } </code></pre> <p>上面这个类被称为Spring Boot应用的启动类，它通过一个java的main（）方法来引导和启动一个Spring应用。它通常包含了以下内容：</p> <ul> <li>创建一个Spring ApplicationContext实例。</li> <li>接收命令行参数并将其转为Spring属性。</li> <li>按照配置加载所有Spring Bean。可以根据项目需求进行其他操作。</li> </ul> <h2> <a id="2_SpringBootApplication_30" rel="nofollow"></a>2. @SpringBootApplication注解</h2> <p>这个注解其实是一个应用了3个注解的快捷方式。</p> <h3> <a id="21_SpringBootConfiguration_32" rel="nofollow"></a>2.1 @SpringBootConfiguration</h3> <p>@SpringBootConfiguration是在Spring Boot2中出现的一个新的注解。之前我们都是使用的 @Configuration注解，可以用 @Configuration来替换它，2个都是实现同样的功能。</p> <p>它表示该类是一个配置类，应该对其进行扫描，以获得进一步的配置和bean定义。</p> <h3> <a id="22_EnableAutoConfiguration_37" rel="nofollow"></a>2.2 @EnableAutoConfiguration</h3> <p>此注解用于启用Spring Application Context的自动配置，尝试猜测和配置您可能需要的bean。自动配置类通常基于您的类路径以及您定义的bean来应用。</p> <p>自动配置尝试尽可能智能，并在您定义更多自己的配置时进行后退。您始终可以使用两种方法来手动排除任何您不想应用的配置：</p> <ul> <li>使用excludeName（）</li> <li>使用spring.autoconfigure.exclude属性文件中的属性。</li> </ul> <h3> <a id="23_ComponentScan_44" rel="nofollow"></a>2.3 @ComponentScan</h3> <p>此注解提供了与Spring XML context:component-scan元素并行的支持。</p> <p>无论是basePackageClasses()或basePackages()可以定义特定的软件包进行扫描。如果未定义特定包，则将从声明此注解的类的包进行扫描。</p> <h2> <a id="3_49" rel="nofollow"></a>3.自定义自动配置</h2> <p>要创建自定义自动配置，我们需要创建一个注释为@Configuration的类并注册它。</p> <p>让我们为MySQL数据源创建自定义配置：</p> <pre><code>@Configuration public class MySQLAutoconfiguration {   //... } </code></pre> <p>下一个必须的步骤是通过在标准文件资源/ META-INF / spring.factories中的属性org.springframework.boot.autoconfigure.EnableAutoConfiguration下添加类的名称，将类注册为自动配置候选者：</p> <pre><code>org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.peterwanghao.samples.springboot.autoconfiguration.MySQLAutoconfiguration  </code></pre> <p>如果我们希望我们的自动配置类优先于其他自动配置候选者，我们可以添加@AutoConfigureOrder（Ordered.HIGHEST_PRECEDENCE）注解。</p> <p>自动配置是使用标有@Conditional注解的类和bean设计的，以便可以替换自动配置或其特定部分。</p> <p><strong>请注意，只有当应用程序中未定义自动配置的bean时，自动配置才有效。如果您定义了bean，那么将覆盖默认值。</strong></p> <h3> <a id="31__72" rel="nofollow"></a>3.1 基于类的条件注解</h3> <p>Class conditions允许我们指定使用@ConditionalOnClass注解指定的类，或者使用@ConditionalOnMissingClass注解来指定不存在于 classpath 上的类。</p> <p>让我们指定只有存在类DataSource的情况下才会加载MySQLConfiguration，在这种情况下我们可以假设应用程序将使用数据库：</p> <pre><code>@Configuration @ConditionalOnClass(DataSource.class) public class MySQLAutoconfiguration {     //... } </code></pre> <h3> <a id="32_Bean_84" rel="nofollow"></a>3.2 基于Bean的条件注解</h3> <p>如果我们只想在指定的bean存在的情况下包含bean，我们可以使用@ConditionalOnBean和@ConditionalOnMissingBean注解。</p> <p>举例说明，让我们将一个entityManagerFactory bean 添加到我们的配置类中，并指定如果存在一个名为dataSource的bean 并且尚未定义一个名为entityManagerFactory的 bean，我们就创建这个bean ：</p> <pre><code>@Bean 	@ConditionalOnBean(name = "dataSource") 	@ConditionalOnMissingBean 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() { 		final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean(); 		em.setDataSource(dataSource()); 		em.setPackagesToScan("com.peterwanghao.samples.springboot.autoconfiguration.example"); 		em.setJpaVendorAdapter(new HibernateJpaVendorAdapter()); 		if (additionalProperties() != null) { 			em.setJpaProperties(additionalProperties()); 		} 		return em; 	} </code></pre> <p>让我们配置一个只在尚未定义类型为JpaTransactionManager的bean时才会加载的transactionManager bean ：</p> <pre><code>@Bean 	@ConditionalOnMissingBean(type = "JpaTransactionManager") 	JpaTransactionManager transactionManager(final EntityManagerFactory entityManagerFactory) { 		final JpaTransactionManager transactionManager = new JpaTransactionManager(); 		transactionManager.setEntityManagerFactory(entityManagerFactory); 		return transactionManager; 	} </code></pre> <h3> <a id="33__115" rel="nofollow"></a>3.3 基于属性的条件注解</h3> <p>@ConditionalOnProperty注解用于指定是否配置将基于Spring环境属性的存在和值被加载。</p> <p>首先，让我们为配置添加一个属性源文件，以确定从哪里读取属性：</p> <pre><code>@PropertySource("classpath:mysql.properties") public class MySQLAutoconfiguration {     //... } </code></pre> <p>我们可以配置主DataSource bean，它将用于创建与数据库的连接，只有在存在名为usemysql的属性时才会加载它。</p> <p>我们可以使用属性havingValue来指定必须匹配的usemysql属性的某些值。</p> <p>如果usemysql属性设置为local，让我们使用默认值定义dataSource bean，该默认值连接到名为myDb的本地数据库：</p> <pre><code>@Bean 	@ConditionalOnProperty(name = "usemysql", havingValue = "local") 	@ConditionalOnMissingBean 	public DataSource dataSource() { 		final DriverManagerDataSource dataSource = new DriverManagerDataSource();  		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver"); 		dataSource.setUrl("jdbc:mysql://localhost:3306/myDb?createDatabaseIfNotExist=true&amp;&amp;serverTimezone=GMT%2B8"); 		dataSource.setUsername("root"); 		dataSource.setPassword("123456");  		return dataSource; 	} </code></pre> <p>如果usemysql属性设置为自定义，则数据源 bean将使用自定义属性值的数据库URL，用户和密码进行配置：</p> <pre><code>@Bean(name = "dataSource") 	@ConditionalOnProperty(name = "usemysql", havingValue = "custom") 	@ConditionalOnMissingBean 	public DataSource dataSource2() { 		final DriverManagerDataSource dataSource = new DriverManagerDataSource();  		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver"); 		dataSource.setUrl(env.getProperty("mysql.url")); 		dataSource.setUsername(env.getProperty("mysql.user") != null ? env.getProperty("mysql.user") : ""); 		dataSource.setPassword(env.getProperty("mysql.pass") != null ? env.getProperty("mysql.pass") : "");  		return dataSource; 	} </code></pre> <p>该mysql.properties文件将包含usemysql属性：</p> <pre><code>usemysql=local </code></pre> <p>如果使用MySQLAutoconfiguration的应用程序希望覆盖默认属性，则它需要做的就是为mysql.properties文件中的mysql.url，mysql.user和mysql.pass属性添加不同的值以及添加usemysql = custom行。</p> <h3> <a id="34__171" rel="nofollow"></a>3.4 基于资源的条件注解</h3> <p>添加@ConditionalOnResource注解意味着仅在存在指定资源时才加载配置。</p> <p>让我们定义一个名为additionalProperties（）的方法，该方法将返回一个Properties对象，该对象包含entityManagerFactory bean 使用的特定于Hibernate的属性，仅当存在资源文件mysql.properties时：</p> <pre><code>@ConditionalOnResource(resources = "classpath:mysql.properties") 	@Conditional(HibernateCondition.class) 	final Properties additionalProperties() { 		final Properties hibernateProperties = new Properties();  		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", env.getProperty("mysql-hibernate.hbm2ddl.auto")); 		hibernateProperties.setProperty("hibernate.dialect", env.getProperty("mysql-hibernate.dialect")); 		hibernateProperties.setProperty("hibernate.show_sql", 				env.getProperty("mysql-hibernate.show_sql") != null ? env.getProperty("mysql-hibernate.show_sql") 						: "false");  		return hibernateProperties; 	} </code></pre> <p>我们可以将Hibernate特定的属性添加到<em>mysql.properties</em>文件中：</p> <pre><code>mysql-hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect mysql-hibernate.show_sql=true mysql-hibernate.hbm2ddl.auto=create-drop </code></pre> <h3> <a id="35__198" rel="nofollow"></a>3.5 自定义条件</h3> <p>如果我们不想使用Spring Boot中的任何可用条件，我们还可以通过扩展SpringBootCondition类并重写getMatchOutcome（）方法来定义自定义条件。</p> <p>让我们为additionalProperties（）方法创建一个名为HibernateCondition的条件，该方法将验证类路径上是否存在HibernateEntityManager类：</p> <pre><code>static class HibernateCondition extends SpringBootCondition {  		private static final String[] CLASS_NAMES = { "org.hibernate.ejb.HibernateEntityManager", 				"org.hibernate.jpa.HibernateEntityManager" };  		@Override 		public ConditionOutcome getMatchOutcome(ConditionContext context, AnnotatedTypeMetadata metadata) { 			ConditionMessage.Builder message = ConditionMessage.forCondition("Hibernate");  			return Arrays.stream(CLASS_NAMES) 					.filter(className -&gt; ClassUtils.isPresent(className, context.getClassLoader())) 					.map(className -&gt; ConditionOutcome.match(message.found("class").items(Style.NORMAL, className))) 					.findAny().orElseGet(() -&gt; ConditionOutcome.noMatch( 							message.didNotFind("class", "classes").items(Style.NORMAL, Arrays.asList(CLASS_NAMES)))); 		}  	} </code></pre> <p>然后我们可以将条件添加到additionalProperties（）方法：</p> <pre><code>@Conditional(HibernateCondition.class) Properties additionalProperties() {   //... }  </code></pre> <h3> <a id="36__231" rel="nofollow"></a>3.6 申请条件</h3> <p>我们还可以通过添加@ConditionalOnWebApplication或@ConditionalOnNotWebApplication注释来指定只能在Web上下文内部/外部加载配置。</p> <h2> <a id="4__234" rel="nofollow"></a>4. 测试自动配置</h2> <p>让我们创建一个非常简单的例子来测试我们的自动配置。我们将使用Spring Data 创建一个名为MyUser的实体类和一个MyUserRepository接口：</p> <pre><code>@Entity public class MyUser { 	@Id 	private String email;  	public MyUser() { 	}  	public MyUser(String email) { 		super(); 		this.email = email; 	}  	public String getEmail() { 		return email; 	}  	public void setEmail(String email) { 		this.email = email; 	}  } </code></pre> <pre><code>public interface MyUserRepository extends JpaRepository&lt;MyUser, String&gt; {  } </code></pre> <p>要启用自动配置，我们可以使用@SpringBootApplication或@EnableAutoConfiguration注解：</p> <pre><code>@SpringBootApplication public class AutoconfigurationApplication {  	public static void main(String[] args) { 		SpringApplication.run(AutoconfigurationApplication.class, args); 	} } </code></pre> <p>接下来，让我们编写一个保存MyUser实体的JUnit测试：</p> <pre><code>@RunWith(SpringJUnit4ClassRunner.class) @SpringBootTest(classes = AutoconfigurationApplication.class) @EnableJpaRepositories(basePackages = { "com.peterwanghao.samples.springboot.autoconfiguration.example" }) public class AutoconfigurationLiveTest {      @Autowired     private MyUserRepository userRepository;      @Test     public void whenSaveUser_thenOk() {         MyUser user = new MyUser("user@email.com");         userRepository.save(user);     }  } </code></pre> <p>由于我们尚未定义DataSource配置，因此应用程序将使用我们创建的自动配置连接到名为myDb的MySQL数据库。</p> <p>连接字符串包含createDatabaseIfNotExist = true属性，因此数据库不需要存在。但是，需要创建用户mysqluser或通过mysql.user属性指定的用户mysqluser。</p> <p>我们可以检查应用程序日志，看看是否正在使用MySQL数据源：</p> <pre><code>10:31:47.092 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.7.Final} 10:31:47.094 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found 10:31:47.227 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final} 10:31:48.039 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect Hibernate: drop table if exists MyUser Hibernate: create table MyUser (email varchar(255) not null, primary key (email)) engine=InnoDB 10:31:48.655 [main] INFO  o.h.t.s.internal.SchemaCreatorImpl - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@3a0b6a' 10:31:48.666 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 10:31:49.496 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor' 10:31:49.569 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 10:31:49.701 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration) 10:31:50.091 [main] INFO  c.p.s.s.a.AutoconfigurationLiveTest - Started AutoconfigurationLiveTest in 4.803 seconds (JVM running for 5.519) Hibernate: select myuser0_.email as email1_0_0_ from MyUser myuser0_ where myuser0_.email=? Hibernate: insert into MyUser (email) values (?) 10:31:50.279 [Thread-2] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor' 10:31:50.281 [Thread-2] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 10:31:50.282 [Thread-2] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down' Hibernate: drop table if exists MyUser </code></pre> <h2> <a id="5__322" rel="nofollow"></a>5. 禁用自动配置类</h2> <p>如果我们想要从加载中排除自动配置，我们可以将带有exclude或excludeName属性的@EnableAutoConfiguration注解添加到配置类：</p> <pre><code>@Configuration @EnableAutoConfiguration(   exclude={MySQLAutoconfiguration.class}) public class AutoconfigurationApplication {     //... } </code></pre> <p>禁用特定自动配置的另一个方法是设置spring.autoconfigure.exclude属性：</p> <pre><code>spring.autoconfigure.exclude=com.peterwanghao.samples.springboot.autoconfiguration.MySQLAutoconfiguration </code></pre> </h1> <p>在本教程中，我们介绍了Spring Boot是如何自动加载配置类，以及背后所隐藏的具体实现。展示了如何创建自定义Spring Boot自动配置。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-22047.htm">合肥宠物救助中心 合肥宠物救助中心电话</a></p>
+                                        <p>下一个：<a href="/news/article-22512.htm">动物疫苗使用注意事项有哪些呢（动物疫苗使用时的注意事项有哪些）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-20216.htm" title="win11系统怎么关闭自动锁屏">win11系统怎么关闭自动锁屏</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-6-today-mihomo-node.htm" title="10月6日→18M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月6日→18M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-22-mihomo-node-github.htm" title="9月22日→18.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址">9月22日→18.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-mihomo-node-share.htm" title="10月30日→18.3M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月30日→18.3M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-2-mihomo-node-share.htm" title="10月2日→19.8M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月2日→19.8M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21133.htm" title="兰州的狗市在什么地方（兰州那里有狗市）">兰州的狗市在什么地方（兰州那里有狗市）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-latest-mihomo-node.htm" title="11月16日→20.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月16日→20.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-2-mihomo-windows.htm" title="11月2日→20.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月2日→20.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-node-share.htm" title="12月3日→21.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月3日→21.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-10-mihomo-node-share.htm" title="10月10日→20.2M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月10日→20.2M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                                <p>
+                                    <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
