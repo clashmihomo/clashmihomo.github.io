@@ -105,7 +105,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
-                                          				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2><a id="ONVIF2vs2013openssl_0" rel="nofollow"></a>ONVIF开发（2）vs2013编译openssl库</h2> <p>作者最近在windows下基于gsoap开发一个onvif客户端，winsows平台下gsoap鉴权一般采用自带的鉴权函数，但必须调用openssl库，下面将详细介绍如何在windows平台下利用vs2013编译openssl库：<br /> 1、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.openssl.org/source/old/1.0.1/"  rel="nofollow">下载openssl源码</a>，作者下载的版本是openssl-1.0.1e，1.0及以上版本可能会失败，原因是部分编译指令不支持。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221105/5015856667b5f4e530726be27b2c7ab0.jpg" alt="ONVIF开发（2）vs2013编译openssl库"><br /> 2、解压openssl-1.0.1e.tar.gz到S盘（作者解压到的目录）<br /> 3、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.activestate.com/products/perl/downloads/"  rel="nofollow">下载Perl</a>，根据系统提示安装即可，安装成功后添加环境变量，在系统变量Path一栏添加 C:\Perl64\bin;（C:\Perl64\ 为作者的安装目录），重启系统<br /> 4、新建目录 S:\openssl_lib\x86 存放编译后的库文件<br /> 5、打开2013控制台：开始-所有程序—Microsoft visual studio2013——Visual Studio Tools——<br /> 6、VS2013 x86 本机工具命令提示<br /> 7、执行<code>cd /d S:/openssl-1.0.1e</code>（进入openssl-1.0.1e解压目录，此处因为是从C盘跨越到S盘，所以加上/d）<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221105/51f619bf1e5bdc4b74ffd68a81b0011c.jpg" alt="ONVIF开发（2）vs2013编译openssl库"><br /> 8、执行<code>perl Configure VC-WIN32 no-asm --prefix=S:\openssl_lib\x86</code> （存放编译后的库文件目录）<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221105/0b85566795906638ce36000f8c3f230c.jpg" alt="ONVIF开发（2）vs2013编译openssl库"><br /> 9、执行<code>ms\do_ms</code><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221105/ad8b7c6a46f1385a73c7c1ef54c988cb.jpg" alt="ONVIF开发（2）vs2013编译openssl库"><br /> 10、执行指令<code>nmake -f ms\ntdll.mak</code>（编译动态库，大约几分钟，耐心等待…）<br /> 11、执行指令<code>nmake -f ms\nt.mak</code> （编译静态库）</p> <p>装载openssl到指定的目录S:\opensll_lib\x86中<br /> 12、执行指令<code>nmake -f ms\ntdll.mak install</code><br /> 13、执行指令<code>nmake -f ms\nt.mak install</code></p> <p>编译结束，库目录包含bin、include、lib、ssl 四个文件夹</p> </div> 			                <div class="clearfix"></div>
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2><a id="ONVIF2vs2013openssl_0" rel="nofollow"></a>ONVIF开发（2）vs2013编译openssl库</h2> <p>作者最近在windows下基于gsoap开发一个onvif客户端，winsows平台下gsoap鉴权一般采用自带的鉴权函数，但必须调用openssl库，下面将详细介绍如何在windows平台下利用vs2013编译openssl库：<br /> 1、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.openssl.org/source/old/1.0.1/"  rel="nofollow">下载openssl源码</a>，作者下载的版本是openssl-1.0.1e，1.0及以上版本可能会失败，原因是部分编译指令不支持。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221105/5015856667b5f4e530726be27b2c7ab0.jpg" alt="ONVIF开发（2）vs2013编译openssl库"><br /> 2、解压openssl-1.0.1e.tar.gz到S盘（作者解压到的目录）<br /> 3、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.activestate.com/products/perl/downloads/"  rel="nofollow">下载Perl</a>，根据系统提示安装即可，安装成功后添加环境变量，在系统变量Path一栏添加 C:\Perl64\bin;（C:\Perl64\ 为作者的安装目录），重启系统<br /> 4、新建目录 S:\openssl_lib\x86 存放编译后的库文件<br /> 5、打开2013控制台：开始-所有程序—Microsoft visual studio2013——Visual Studio Tools——<br /> 6、VS2013 x86 本机工具命令提示<br /> 7、执行<code>cd /d S:/openssl-1.0.1e</code>（进入openssl-1.0.1e解压目录，此处因为是从C盘跨越到S盘，所以加上/d）<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221105/51f619bf1e5bdc4b74ffd68a81b0011c.jpg" alt="ONVIF开发（2）vs2013编译openssl库"><br /> 8、执行<code>perl Configure VC-WIN32 no-asm --prefix=S:\openssl_lib\x86</code> （存放编译后的库文件目录）<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221105/0b85566795906638ce36000f8c3f230c.jpg" alt="ONVIF开发（2）vs2013编译openssl库"><br /> 9、执行<code>ms\do_ms</code><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221105/ad8b7c6a46f1385a73c7c1ef54c988cb.jpg" alt="ONVIF开发（2）vs2013编译openssl库"><br /> 10、执行指令<code>nmake -f ms\ntdll.mak</code>（编译动态库，大约几分钟，耐心等待…）<br /> 11、执行指令<code>nmake -f ms\nt.mak</code> （编译静态库）</p> <p>装载openssl到指定的目录S:\opensll_lib\x86中<br /> 12、执行指令<code>nmake -f ms\ntdll.mak install</code><br /> 13、执行指令<code>nmake -f ms\nt.mak install</code></p> <p>编译结束，库目录包含bin、include、lib、ssl 四个文件夹</p> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-23883.htm">动物疫苗防疫站电话号码查询 动物疫苗防疫站电话号码查询是多少</a></p>
                                         <p>下一个：<a href="/news/article-24335.htm">教育管理专硕就业难痛哭(教育管理专硕就业前景)</a></p>
@@ -118,16 +119,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-22966.htm" title="SpringBoot自定义控制层参数解析_在线工具">SpringBoot自定义控制层参数解析_在线工具</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-27-mihomo-node-github.htm" title="9月27日→20.2M/S|2024年最新免费节点Clash Mihomo订阅链接地址">9月27日→20.2M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-8-mihomo-node.htm" title="11月8日→21.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月8日→21.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-2-mihomo-windows.htm" title="11月2日→20.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月2日→20.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-29-today-mihomo-node.htm" title="11月29日→22M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月29日→22M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-25285.htm" title="没经验的新手开宠物店怎么样?（零基础开宠物店）">没经验的新手开宠物店怎么样?（零基础开宠物店）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-16-latest-mihomo-node.htm" title="11月16日→20.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月16日→20.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-27-mihomo-node.htm" title="10月27日→20.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月27日→20.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-19302.htm" title="人跟狗打的狂犬疫苗一样吗 人跟狗打的狂犬疫苗一样吗多少钱">人跟狗打的狂犬疫苗一样吗 人跟狗打的狂犬疫苗一样吗多少钱</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-1-free-node-subscribe.htm" title="11月1日→22M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月1日→22M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-mihomo-github.htm" title="11月24日→21.1M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月24日→21.1M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-mihomo-node.htm" title="11月26日→18.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月26日→18.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-22047.htm" title="合肥宠物救助中心 合肥宠物救助中心电话">合肥宠物救助中心 合肥宠物救助中心电话</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-23-free-node-subscribe.htm" title="9月23日→19.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址">9月23日→19.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-latest-mihomo-node.htm" title="10月15日→21.3M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月15日→21.3M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-node-share-links.htm" title="11月14日→21.1M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月14日→21.1M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-node-share.htm" title="10月8日→20.3M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月8日→20.3M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-22-mihomo-node-github.htm" title="9月22日→18.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址">9月22日→18.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-23417.htm" title="Java中的多线程你只要看这一篇就够了">Java中的多线程你只要看这一篇就够了</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-node-share.htm" title="12月3日→21.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月3日→21.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -139,7 +140,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -167,6 +168,15 @@
                     <div class="col-xl-12">
                         <div class="site-footer-bottom__inner">
                             <div class="site-footer-bottom__left">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
                                 <p>
                                     <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
                                 </p>

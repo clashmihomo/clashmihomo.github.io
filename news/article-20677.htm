@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>python的eval和json.loads(),json.dumps()</title>
         <meta name="description" content="eval() 将字符串当成一个表达式去执行，可以想象成一个去字符串然后执行的操作。  In [1]: s = '3*8'  In [2]: eval(s) Out[2]: 24  eval()和jso" />
-        <link rel="icon" href="__ADDON__/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -105,7 +105,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
-                                          				  				  				<div id="content_views" class="htmledit_views"> <div id="cnblogs_post_body" class="blogpost-body"> <p>eval() 将字符串当成一个表达式去执行，可以想象成一个去字符串然后执行的操作。</p> <div class="cnblogs_code"> <pre>In [1]: s = <span style="color:#800000;">'</span><span style="color:#800000;">3*8</span><span style="color:#800000;">'</span><span style="color:#000000;">  In [</span>2<span style="color:#000000;">]: eval(s) Out[</span>2]: 24</pre> </p></div> <p>eval()和json.loads() 都可以将字符串转换成对应的python数据类型，举个字典的例子，同样适合其他数据类型元组、列表、集合。</p> <div class="cnblogs_code"> <pre>In [3]: ss = <span style="color:#800000;">'</span><span style="color:#800000;">{"a":1,"b":2}</span><span style="color:#800000;">'</span><span style="color:#000000;">  In [</span>4<span style="color:#000000;">]: type(eval(ss)) Out[</span>4<span style="color:#000000;">]: dict  In [</span>7<span style="color:#000000;">]: type(json.loads(ss)) Out[</span>7]: dict</pre> </p></div> <p>json一种轻量级数据交换格式，可以将json对象当作比较特殊的字符串，在python中使用json.loads() (用于将json对象转换成python对应的数据类型)和json.dumps()用于将python数据类型转换成json对象，下面举个例子</p> <div class="cnblogs_code"> <pre>In [10<span style="color:#000000;">]: ss Out[</span>10]: <span style="color:#800000;">'</span><span style="color:#800000;">{"a":1,"b":2}</span><span style="color:#800000;">'</span><span style="color:#000000;">  In [</span>11]: a =<span style="color:#000000;"> json.loads(ss)  In [</span>12<span style="color:#000000;">]: type(a) Out[</span>12<span style="color:#000000;">]: dict  In [</span>13]: x =<span style="color:#000000;"> json.dumps(a)  In [</span>14<span style="color:#000000;">]: type(x) Out[</span>14]: str</pre> </p></div> <p>json在网站后端和前端中很常用，还有就是爬虫爬取的数据，数据分析时的json文件，都可以用到这些方法</p> </div> <p>转载于:https://www.cnblogs.com/jay-col/p/10458146.html</p> </p></div> 			                <div class="clearfix"></div>
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div id="cnblogs_post_body" class="blogpost-body"> <p>eval() 将字符串当成一个表达式去执行，可以想象成一个去字符串然后执行的操作。</p> <div class="cnblogs_code"> <pre>In [1]: s = <span style="color:#800000;">'</span><span style="color:#800000;">3*8</span><span style="color:#800000;">'</span><span style="color:#000000;">  In [</span>2<span style="color:#000000;">]: eval(s) Out[</span>2]: 24</pre> </p></div> <p>eval()和json.loads() 都可以将字符串转换成对应的python数据类型，举个字典的例子，同样适合其他数据类型元组、列表、集合。</p> <div class="cnblogs_code"> <pre>In [3]: ss = <span style="color:#800000;">'</span><span style="color:#800000;">{"a":1,"b":2}</span><span style="color:#800000;">'</span><span style="color:#000000;">  In [</span>4<span style="color:#000000;">]: type(eval(ss)) Out[</span>4<span style="color:#000000;">]: dict  In [</span>7<span style="color:#000000;">]: type(json.loads(ss)) Out[</span>7]: dict</pre> </p></div> <p>json一种轻量级数据交换格式，可以将json对象当作比较特殊的字符串，在python中使用json.loads() (用于将json对象转换成python对应的数据类型)和json.dumps()用于将python数据类型转换成json对象，下面举个例子</p> <div class="cnblogs_code"> <pre>In [10<span style="color:#000000;">]: ss Out[</span>10]: <span style="color:#800000;">'</span><span style="color:#800000;">{"a":1,"b":2}</span><span style="color:#800000;">'</span><span style="color:#000000;">  In [</span>11]: a =<span style="color:#000000;"> json.loads(ss)  In [</span>12<span style="color:#000000;">]: type(a) Out[</span>12<span style="color:#000000;">]: dict  In [</span>13]: x =<span style="color:#000000;"> json.dumps(a)  In [</span>14<span style="color:#000000;">]: type(x) Out[</span>14]: str</pre> </p></div> <p>json在网站后端和前端中很常用，还有就是爬虫爬取的数据，数据分析时的json文件，都可以用到这些方法</p> </div> <p>转载于:https://www.cnblogs.com/jay-col/p/10458146.html</p> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-20217.htm">宠物粮从哪里进货便宜又好呢图片视频（宠物粮进货渠道）</a></p>
                                         <p>下一个：<a href="/news/article-20678.htm">参观动物医院的心得体会300字（参观动物园心得）</a></p>
@@ -118,16 +119,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-21598.htm" title="学兽医去哪里学比较好211（学兽医在哪个学校比较好）">学兽医去哪里学比较好211（学兽医在哪个学校比较好）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-18-free-node-subscribe-links.htm" title="10月18日→21.1M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月18日→21.1M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-5-free-high-speed-nodes.htm" title="12月5日→22.8M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月5日→22.8M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-1-free-node-subscribe.htm" title="11月1日→22M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月1日→22M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-23-mihomo-node.htm" title="11月23日→22.8M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月23日→22.8M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-3-mihomo-node-share.htm" title="11月3日→21.5M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月3日→21.5M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-8-mihomo-node.htm" title="11月8日→21.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月8日→21.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-26-mihomo-node.htm" title="10月26日→19.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月26日→19.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-9-free-subscribe-node.htm" title="11月9日→18M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月9日→18M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-8-node-share.htm" title="10月8日→20.3M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月8日→20.3M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-free-subscribe-node.htm" title="11月10日→20.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月10日→20.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-7-free-mihomo-node.htm" title="12月7日→22.3M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月7日→22.3M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-25-free-node-subscribe.htm" title="9月25日→22.6M/S|2024年最新免费节点Clash Mihomo订阅链接地址">9月25日→22.6M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-25-free-node-subscribe.htm" title="10月25日→18M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月25日→18M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-today-mihomo-node.htm" title="11月29日→22M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月29日→22M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-latest-mihomo-node.htm" title="11月16日→20.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月16日→20.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-15-today-mihomo-node.htm" title="11月15日→19.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月15日→19.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24335.htm" title="教育管理专硕就业难痛哭(教育管理专硕就业前景)">教育管理专硕就业难痛哭(教育管理专硕就业前景)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-3-mihomo-node-share.htm" title="10月3日→18.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月3日→18.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-node-share-links.htm" title="11月14日→21.1M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月14日→21.1M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -139,7 +140,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -167,6 +168,15 @@
                     <div class="col-xl-12">
                         <div class="site-footer-bottom__inner">
                             <div class="site-footer-bottom__left">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
                                 <p>
                                     <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
                                 </p>
