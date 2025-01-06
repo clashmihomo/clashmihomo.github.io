@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashmihomo.github.io/news/article-36231.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JVM将初始和最大内存大小设置为相同值的好处</title>
+        <meta name="description" content="操作系统的内存分配和解除分配 目录  			  微信公众号：Java大家族  JVM将初始和最大内存大小设置为相同值的好处 &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;启" />
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN7DJKT3D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZN7DJKT3D0');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>Clash Mihomo</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>JVM将初始和最大内存大小设置为相同值的好处</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				  			 <div id="log-box">  				<div id="catalog"><ul id="catalog-ul"> <li><i class="be be-arrowright"></i> <a href="#title-0" title="操作系统的内存分配和解除分配">操作系统的内存分配和解除分配</a></li> </ul><span class="log-zd"><span class="log-close"><a title="隐藏目录"><i class="be be-cross"></i><strong>目录</strong></a></span></span></div>  			</div> <blockquote> <p>微信公众号：<strong>Java大家族</strong></p> </blockquote> <h3>JVM将初始和最大内存大小设置为相同值的好处</h3> <p>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;启动应用程序时，我们指定初始内存大小和最大内存大小。对于在 JVM（Java 虚拟机）上运行的应用程序，初始和最大内存大小通过 “-Xms” 和 “-Xmx” 参数指定。如果 Java 应用程序在容器上运行，则通过“-XX：InitialRAMPercentage”和“-XX：MaxRAMPercentage”参数指定它。大多数企业将初始内存大小设置为低于最大内存大小的值。与这种普遍接受的做法相反，将初始内存大小设置为与最大内存大小相同具有如下优势。让我们在这篇文章中讨论它们。</p> <h3>1. 可用性</h3> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;假设您正在启动应用程序，初始堆大小为 2GB，最大堆大小为 24GB。这意味着当应用程序启动时，操作系统将为您的应用程序分配 2GB 的内存。从那时起，当应用程序开始处理新请求时，将分配额外的内存，直到达到最大 24GB。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;假设当您的应用程序的内存消耗正在从2GB增长到24GB的过程中，此时，服务器启动了其他一些进程，并且这些进程开始消耗内存。这种情况在生产/云环境中非常常见，尤其是在应用程序与其他进程（如自定义脚本、cron 作业、监视代理等）一起运行时。</p> <p>发生这种情况时，您的应用程序将遇到以下情况：</p> <p>“java.lang.OutOfMemoryError：Java heap space”<br />操作系统将终止您的应用程序，并显示“内存不足：杀死进程。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这意味着您的应用程序将在事务过程中崩溃。如果应用程序在启动期间以最大内存启动，则应用程序将是安全的。操作系统将仅终止内存消耗正在增长的新启动的脚本/cron 作业，而不会终止在启动期间内存已完全分配的应用程序。</p> <h3>2. 性能</h3> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们还观察到，以相同的初始堆大小和最大堆大小启动的应用程序往往比以较低的初始堆大小启动的应用程序的性能相对较好。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是一个真实的案例研究：我们使用记忆密集型应用程序进行测试。此应用程序处理非常大的二进制堆转储文件并生成分析报告。在这个应用程序中，我们反复分析一个11GB大小的二进制文件，这样它就会给操作系统带来内存压力。</p> <p>我们进行了两个测试场景：</p> <p>方案 1：我们将初始堆大小设置为 2GB，最大堆大小设置为 24GB。<br />方案 2：我们将初始堆大小和最大堆大小都设置为 24GB。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在场景 1 中，我们观察到平均响应时间为 385.32 秒，而在场景 2 中，我们观察到平均响应时间为 366.55 秒。响应时间缩短了 5.11%。响应时间的这种改善是由于以下两个原因：</p> <span class="directory"></span><h4 id="title-0">操作系统的内存分配和解除分配</h4> <p>GC 暂停时间影响<br />让我们在这里讨论它们：</p> <p>从操作系统分配和解除分配内存<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当您为初始堆大小和最大堆大小设置了不同的大小时，JVM 将不得不与操作系统协商，以便在需要时分配内存。同样，当应用程序对内存的需求在运行时出现故障时，操作系统将占用分配的内存。这种持续的分配和解除分配将增加应用程序的开销。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/3fcb5a6294a52473838f2dbe0e1f511c.jpg" alt="JVM将初始和最大内存大小设置为相同值的好处"></p> <p>&nbsp;场景 1：内存分配波动（按 GCeasy 绘制的图表）</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上图显示了场景 1 JVM 的已分配和已解除分配的内存。从图表中，您可以注意到内存在不断波动（在 2GB 到 24GB 之间波动）。当应用程序处理堆转储时，内存最多可达 24GB。处理后，内存将回落到 2GB。当它再次处理新的堆转储时，内存会回弹到 24GB。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/0fe4cc5fbfd9cc1a6a7c8644fcdaba95.jpg" alt="JVM将初始和最大内存大小设置为相同值的好处"></p> <h5>场景 2：内存分配常量（由 GCeasy 绘制）</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上图显示了场景 2 JVM 在其生命周期内分配的内存。你可以看到没有波动。内存是在启动期间从操作系统保留的，从那时起，没有波动。无论应用程序中的活动如何，它始终保持在24GB。此行为有可能在一定程度上提高应用程序的性能。</p> <h5>GC 暂停时间影响</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当垃圾回收运行时，它会暂停应用程序，这将对客户产生负面影响。我们使用 GCeasy 工具研究了两种方案的垃圾回收性能。结果如下：</p> <h5>垃圾回收性能结果</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们注意到 GC 吞吐量和 GC 暂停时间略有下降。在方案 1 中，GC 吞吐量为 96.59%，而在方案 2 中，GC 吞吐量略好 （97.83%）。同样，在场景 1 中，Max GC 的暂停时间为 5.23 秒，而在场景 2 中仅为 1.65 秒。。</p> <p><strong>应用程序启动时间</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果将初始堆大小设置为与最大堆大小相同，则应用程序的启动时间也会更好。以下是 Oracle 文档的摘录：</p> <p><strong>“</strong><strong>如果初始堆太小，Java 应用程序的启动速度会变慢，因为 JVM 被迫频繁地执行垃圾回收，直到堆增长到更合理的大小。为获得最佳启动性能，请将初始堆大小设置为与最大堆大小相同。</strong><strong>"</strong></p> <h3>4. 成本</h3> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;无论您将初始堆大小 （-Xms） 和最大堆大小 （-Xmx） 设置为相同值还是其他值，您支付给云托管提供商的计算成本都不会更改。假设您正在使用阿里云、腾讯云等云厂商的实例，那么无论设置初始堆大小和最大堆大小的值如何，您最终都将支付固定小时的费用。云提供商不会根据您在该计算机中使用的内存量向您收费。它们仅根据您使用实例的时间收费。因此，将初始堆大小设置为低于最大堆大小不会节省成本。</p> <h3>结论</h3> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在配置线程池或连接池时，将初始堆大小配置为小于最大堆大小是有意义的。在这些资源中，过度分配会产生不必要的影响，但是，内存并非如此。因此，如果要构建企业应用程序，强烈建议将初始堆大小和最大堆大小设置为相同的值。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-36230.htm">nodejs的TCP相关的一些笔记</a></p>
+                                        <p>下一个：<a href="/news/article-36625.htm">【Azure Developer】使用 CURL 获取 Key Vault 中 Secrets 中的值</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-node-share-links.htm" title="11月14日→21.1M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月14日→21.1M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-mihomo-node.htm" title="12月16日→18.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月16日→18.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-free-subscribe-node.htm" title="11月10日→20.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月10日→20.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21597.htm" title="动物疫苗价格排行榜最新图片高清大全 动物疫苗价格排行榜最新图片高清大全集">动物疫苗价格排行榜最新图片高清大全 动物疫苗价格排行榜最新图片高清大全集</a></li>
+                        <li class="py-2"><a href="/news/article-23417.htm" title="Java中的多线程你只要看这一篇就够了">Java中的多线程你只要看这一篇就够了</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-27-mihomo-windows.htm" title="12月27日→22.6M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月27日→22.6M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-31-free-node-subscribe.htm" title="12月31日→22.3M/S|2025年最新免费节点Clash Mihomo订阅链接地址">12月31日→22.3M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-free-subscribe-node.htm" title="11月19日→21.6M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月19日→21.6M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-mihomo-windows.htm" title="12月11日→18.5M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月11日→18.5M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-29468.htm" title="RBAC-基于角色的访问控制详解">RBAC-基于角色的访问控制详解</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                                <p>
+                                    <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

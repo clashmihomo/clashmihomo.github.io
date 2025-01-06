@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashmihomo.github.io/news/article-36626.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java详细讲解不同版本的接口语法和抽象类与接口的区别_java</title>
+        <meta name="description" content="目录  什么是接口？ 接口的语法： (JDK7.0) 接口的语法： (JDK8.0) 接口的语法： (JDK9.0)—(私有方法) 接口的分类  常量接口： 空接口： 函数式接口：     什么是接口" />
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN7DJKT3D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZN7DJKT3D0');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>Clash Mihomo</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>Java详细讲解不同版本的接口语法和抽象类与接口的区别_java</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">什么是接口？</a></li> <li><a href="#_label1" rel="nofollow">接口的语法： (JDK7.0)</a></li> <li><a href="#_label2" rel="nofollow">接口的语法： (JDK8.0)</a></li> <li><a href="#_label3" rel="nofollow">接口的语法： (JDK9.0)—(私有方法)</a></li> <li><a href="#_label4" rel="nofollow">接口的分类</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_4_0" rel="nofollow">常量接口：</a></li> <li><a href="#_lab2_4_1" rel="nofollow">空接口：</a></li> <li><a href="#_lab2_4_2" rel="nofollow">函数式接口：</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>什么是接口？</h2> <p>说到接口，USB大家肯定不陌生~<br />接口是一种标准、规范.<br />注意：接口一旦制定好，使用者和实现者都必须遵循的标准.</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220419/5750681fa771c1f25afaef4dc18f8a1a.jpg"></p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>接口的语法： (JDK7.0)</h2> <p>(1) 关键字：interface <br />(2) 语法：  interface 接口名{} <br />(3) 接口编译之后会生成对应的 .class文件 <br />(4) 接口不能创建对象，但是可以声明引用 接口名 引用名; <br />(5) 接口中没有构造方法 <br />(6) 接口中所有的属性都是公开的静态常量<br />    (默认被：public static final) <br />(7) 接口中所有的方法都是公开抽象方法<br />    (默认被：public abstract修饰) <br />    注意：接口中的方法默认访问权限为public; <br />         类中方法默认访问权限是 default</p> <p>接口的实现类：</p> <p>语法：</p> <blockquote> <p>class 类名 implements 接口名{} </p> </blockquote> <p>注意：实现的关键字为 implements <br />(1) 如果实现类不想成为抽象类，必须覆盖(实现)接口中所有的方法 <br />(2) 实现类中覆盖接口中的方法时，访问权限必须是public<br />使用：<br />(1) 接口类型的引用中，只能存储对应实现类的对象，体现多态的应用 <br />(2) 语法：</p> <blockquote> <p>    接口名 引用名 = new 实现类类名(实参); </p> </blockquote> <p>    注意：一个接口可以定义多个实现类</p> <p>接口的继承性：(很重要哦~)</p> <p>接口与接口之间为多继承的关系</p> <p>(1) 一个接口可以同时继承多个父接口 </p> <p>(2) 语法： </p> <blockquote> <p>    interface 接口名 extends 父接口名1,父接口名2{}</p> </blockquote> <p>类与接口之间为多实现的关系</p> <p>(1) 一个类可以同时实现多个接口 </p> <p>(2) 语法： </p> <blockquote> <p>    class 类名 implements 接口名1,接口名2{} </p> </blockquote> <p>(3) 一个类同时实现多个接口，不想成为抽象类，则需要实现所有接口中所有方法 <br />    (包括所实现接口的父接口中的方法)</p> <p>一个类实现多个接口的同时还有可以继承一个类</p> <p>(1) 如果一个类继承一个父类同时实现多个接口，必须先继承，再实现 </p> <p>(2) 语法： </p> <blockquote> <p>    class 类名 extends 父类名 implements 父接口1,父接口2{} </p> </blockquote> <p>    注意：必须先 extends ,再 implements </p> <p>类与类之间存在：单继承------extends</p> <p>类与接口之间存在：多实现------implements</p> <p>接口与接口之间存在：多继承------extends</p> <p>接口的影响：</p> <p>1.由于接口之间为多继承的关系，同时类与接口之间是多实现的关系，所以让多态更加多元化和复杂<br />2.如果强制类型转换的双方只要有一方为接口类型，则编译一定通过，运行分以下两种情况：<br />  a.如果转换的引用中存储的实际对象类型是要转换类型的一种，运行通过 <br />  b.如果转换的引用中存储的实际对象类型不是要转换的一种，编译通过，但是运行报错，错误信息：<br />    Java.lang.ClassCastException(类型转换异常)</p> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>接口的语法： (JDK8.0)</h2> <p>(1) 默认方法： </p> <blockquote> <p>    a. public default 返回值类型 方法名(形参列表){ <br />            // 方法的实现部分 <br />       } </p> </blockquote> <p>    b. 注意：接口中方法被 default修饰代表，此方法允许带有方法实现部分 <br />    c. 默认方法访问权限 为 public <br />    d. 默认方法允许被覆盖，但是覆盖时访问修饰符为 public </p> <p>(2) 静态方法： </p> <blockquote> <p>    a. public static 返回值类型 方法名(形参列表){ <br />            // 方法的实现部分 <br />       } </p> </blockquote> <p>    b. 接口中静态方法访问权限是public</p> <p class="maodian"><a name="_label3" rel="nofollow"></a></p> <h2>接口的语法： (JDK9.0)—(私有方法)</h2> <p>(1) 接口中从9.0开始，方法可以被 private修饰 </p> <p>(2) 语法： </p> <blockquote> <p>    private 返回值类型 方法名(形参列表){ <br />        // 方法的实现 <br />    } </p> </blockquote> <p>(3) 私有方法供接口内部使用，通常将其他方法的共同逻辑部分提取，减少代码冗余</p> <p class="maodian"><a name="_label4" rel="nofollow"></a></p> <h2>接口的分类</h2> <p class="maodian"><a name="_lab2_4_0" rel="nofollow"></a></p> <h3>常量接口：</h3> <p>接口中只有属性、没有方法，应用很少</p> <p class="maodian"><a name="_lab2_4_1" rel="nofollow"></a></p> <h3>空接口：</h3> <p>通常称为标记接口，接口中没有任何属性和抽象；<br />例如：IO对象序列化时应用</p> <p class="maodian"><a name="_lab2_4_2" rel="nofollow"></a></p> <h3>函数式接口：</h3> <p>接口中有且只有一个抽象方法(静态和默认不关注)，广泛应用在Lambda表达式中</p> <p>抽象类和接口的区别？ (要牢记哦~)</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220419/aa9eda4825a5feec6b810bbf4d77b92d.jpg"></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-36625.htm">【Azure Developer】使用 CURL 获取 Key Vault 中 Secrets 中的值</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-free-mihomo-node.htm" title="12月14日→18M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月14日→18M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-7-mihomo-node-github.htm" title="11月7日→22.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月7日→22.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-28-free-mihomo-node.htm" title="10月28日→18.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月28日→18.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-29469.htm" title="动物打了疫苗了被抓伤还要***吗视频教学（打过疫苗的动物抓伤要***吗）">动物打了疫苗了被抓伤还要***吗视频教学（打过疫苗的动物抓伤要***吗）</a></li>
+                        <li class="py-2"><a href="/news/article-28998.htm" title="QT下载安装和Visual Studio环境配置">QT下载安装和Visual Studio环境配置</a></li>
+                        <li class="py-2"><a href="/news/article-26227.htm" title="动物医院评论（动物医院评价）">动物医院评论（动物医院评价）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-mihomo-windows.htm" title="12月11日→18.5M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月11日→18.5M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-33270.htm" title="动物疫苗怎么注射视频教程 动物疫苗怎么注射视频教程全集">动物疫苗怎么注射视频教程 动物疫苗怎么注射视频教程全集</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-10-free-high-speed-nodes.htm" title="12月10日→20.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月10日→20.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-10-mihomo-node-share.htm" title="10月10日→20.2M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月10日→20.2M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                                <p>
+                                    <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
