@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashmihomo.github.io/news/article-37597.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electron结合React和TypeScript进行开发</title>
+        <meta name="description" content="目录  结合React+TypeScript进行Electron开发  1. electron基本简介  为什么选择electron？   2. 快速上手  2.1 安装React(template为" />
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN7DJKT3D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZN7DJKT3D0');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>Clash Mihomo</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>Electron结合React和TypeScript进行开发</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div class="toc"> <div class="toc-container-header">目录</div> <ul> <li><a href="#%E7%BB%93%E5%90%88reacttypescript%E8%BF%9B%E8%A1%8Celectron%E5%BC%80%E5%8F%91" rel="nofollow">结合React+TypeScript进行Electron开发</a> <ul> <li><a href="#1-electron%E5%9F%BA%E6%9C%AC%E7%AE%80%E4%BB%8B" rel="nofollow">1. electron基本简介</a> <ul> <li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9electron" rel="nofollow">为什么选择electron？</a></li> </ul> </li> <li><a href="#2-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B" rel="nofollow">2. 快速上手</a> <ul> <li><a href="#21-%E5%AE%89%E8%A3%85reacttemplate%E4%B8%BAts" rel="nofollow">2.1 安装React(template为ts)</a></li> <li><a href="#22-%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AEreact" rel="nofollow">2.2 快速配置React</a></li> <li><a href="#23-%E5%AE%89%E8%A3%85electron" rel="nofollow">2.3 安装electron</a></li> <li><a href="#24-%E9%85%8D%E7%BD%AEmainjspreloadjs%E5%92%8Cpackagejson%E6%96%87%E4%BB%B6" rel="nofollow">2.4 配置<code>main.js</code>、<code>preload.js</code>和<code>package.json</code>文件</a></li> <li><a href="#25-%E8%BF%90%E8%A1%8Celectron%E9%A1%B9%E7%9B%AE" rel="nofollow">2.5 运行electron项目</a></li> <li><a href="#26-%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE" rel="nofollow">2.6 打包项目</a></li> </ul> </li> <li><a href="#3-%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2" rel="nofollow">3. 自动刷新页面</a></li> <li><a href="#4-%E4%B8%BB%E8%BF%9B%E7%A8%8B%E5%92%8C%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B" rel="nofollow">4. 主进程和渲染进程</a></li> <li><a href="#5%E5%AE%9A%E4%B9%89%E5%8E%9F%E7%94%9F%E8%8F%9C%E5%8D%95%E9%A1%B6%E9%83%A8%E8%8F%9C%E5%8D%95" rel="nofollow">5.定义原生菜单、顶部菜单</a> <ul> <li><a href="#51-%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95" rel="nofollow">5.1 自定义菜单</a></li> <li><a href="#52-%E7%BB%99%E8%8F%9C%E5%8D%95%E5%AE%9A%E4%B9%89%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6" rel="nofollow">5.2 给菜单定义点击事件</a></li> <li><a href="#53-%E6%8A%BD%E7%A6%BB%E8%8F%9C%E5%8D%95%E5%AE%9A%E4%B9%89" rel="nofollow">5.3 抽离菜单定义</a></li> <li><a href="#54-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B6%E9%83%A8%E8%8F%9C%E5%8D%95" rel="nofollow">5.4 自定义顶部菜单</a></li> <li><a href="#55-%E5%9C%A8%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%BB%E8%BF%9B%E7%A8%8B%E6%96%B9%E6%B3%95remote%E5%92%8Celectron%E7%82%B9%E5%87%BB%E5%88%9B%E5%BB%BA%E6%96%B0%E7%AA%97%E5%8F%A3" rel="nofollow">5.5 在渲染进程中使用主进程方法remote和electron（点击创建新窗口）</a></li> <li><a href="#56-%E7%82%B9%E5%87%BB%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8" rel="nofollow">5.6 点击打开浏览器</a></li> </ul> </li> <li><a href="#6-%E6%89%93%E5%BC%80%E5%AF%B9%E8%AF%9D%E6%A1%86%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6" rel="nofollow">6. 打开对话框读取文件</a> <ul> <li><a href="#61-%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6" rel="nofollow">6.1 读取文件</a></li> <li><a href="#62-%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6" rel="nofollow">6.2 保存文件</a></li> </ul> </li> <li><a href="#7-%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E9%94%AE" rel="nofollow">7. 定义快捷键</a> <ul> <li><a href="#71-%E4%B8%BB%E7%BA%BF%E7%A8%8B%E5%AE%9A%E4%B9%89" rel="nofollow">7.1 主线程定义</a></li> <li><a href="#72%E5%9C%A8%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B%E4%B8%AD%E5%AE%9A%E4%B9%89" rel="nofollow">7.2在渲染进程中定义</a></li> </ul> </li> <li><a href="#8-%E4%B8%BB%E8%BF%9B%E7%A8%8B%E5%92%8C%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B%E9%80%9A%E8%AE%AF" rel="nofollow">8. 主进程和渲染进程通讯</a></li> </ul> </li> </ul> </div> </h1> <h2 id="1-electron基本简介">1. electron基本简介</h2> <p>electron是使用JavaScript，HTML和CSS构建<strong>跨平台</strong>的<strong>桌面应用程序</strong>。我们可以使用一套代码打包成Mac、Windows和Linux的应用，electron比你想象的更简单，如果把你可以建一个网站，你就可以建一个桌面应用程序，我们只需要把精力放在应用的核心上即可。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/ea5fe4672a9dbe1b76904c1672055939.jpg" alt="Electron结合React和TypeScript进行开发"></p> <h3 id="为什么选择electron">为什么选择electron？</h3> <ul> <li>Electron 可以让你使用纯JavaScript调用丰富的原生APIs来创造桌面应用。你可以把它看作是专注于桌面应用。</li> <li>在PC端桌面应用开发中，nwjs和electron都是可选的方案，它们都是基于Chromium和Node的结合体，而electron相对而言是更好的选择方案，它的社区相对比较活跃，bug比较少，文档相对利索简洁。</li> <li>electron相对来说比nw.js靠谱，有一堆成功的案例：Atom编辑器 Visual Studio Code WordPress等等。</li> <li>Node.js的所有内置模块都在Electron中可用。</li> </ul> <h2 id="2-快速上手">2. 快速上手</h2> <h3 id="21-安装reacttemplate为ts">2.1 安装React(template为ts)</h3> <pre><code>yarn create react-app electron-demo-ts --template typescript</code></pre> <h3 id="22-快速配置react">2.2 快速配置React</h3> <p><strong>工程架构</strong></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/2d82bd0833bb5fd62fcedf3e9dff0b17.jpg" alt="Electron结合React和TypeScript进行开发"></p> <p><strong>index.html</strong></p> <pre><code class="language-html">&lt;!DOCTYPE html&gt; &lt;html lang="en"&gt;   &lt;head&gt;     &lt;meta charset="utf-8" /&gt;     &lt;link  href="%PUBLIC_URL%/favicon.ico" /&gt;     &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;     &lt;meta name="theme-color" content="#000000" /&gt;     &lt;meta       name="description"       content="Bleak's electron app base react"     /&gt;     &lt;meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline';"&gt;     &lt;link  href="%PUBLIC_URL%/css/reset.css"&gt;     &lt;title&gt;electron App&lt;/title&gt;   &lt;/head&gt;   &lt;body&gt;     &lt;noscript&gt;You need to enable JavaScript to run this app.&lt;/noscript&gt;     &lt;div id="root"&gt;&lt;/div&gt;   &lt;/body&gt; &lt;/html&gt;</code></pre> <p><strong>App.tsx</strong></p> <pre><code class="language-tsx">import React from 'react'  export default function App() {   return (     &lt;div&gt;App&lt;/div&gt;   ) }</code></pre> <p><strong>index.tsx</strong></p> <pre><code class="language-tsx">import React from 'react'; import ReactDOM from 'react-dom/client'; import App from './App'; import reportWebVitals from './reportWebVitals';  const root = ReactDOM.createRoot(   document.getElementById('root') as HTMLElement ); root.render(   // &lt;React.StrictMode&gt;     &lt;App /&gt;   // &lt;/React.StrictMode&gt; );  // If you want to start measuring performance in your app, pass a function // to log results (for example: reportWebVitals(console.log)) // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals reportWebVitals();</code></pre> <h3 id="23-安装electron">2.3 安装electron</h3> <p>将<code>electron</code>包安装到您的应用程序的<code>devDependencies</code>.</p> <pre><code>// npm npm install --save-dev electron // yarn yarn add --dev electron</code></pre> <h3 id="24-配置mainjspreloadjs和packagejson文件">2.4 配置<code>main.js</code>、<code>preload.js</code>和<code>package.json</code>文件</h3> <p><strong>main.js</strong></p> <pre><code class="language-js">// 导入app、BrowserWindow模块 // app 控制应用程序的事件生命周期。事件调用app.on('eventName', callback)，方法调用app.functionName(arg) // BrowserWindow 创建和控制浏览器窗口。new BrowserWindow([options]) 事件和方法调用同app // Electron参考文档 https://www.electronjs.org/docs const {app, BrowserWindow, nativeImage } = require('electron') const path = require('path') // const url = require('url');   function createWindow () {     // Create the browser window.     const mainWindow = new BrowserWindow({         width: 800, // 窗口宽度         height: 600,  // 窗口高度         // title: "Electron app", // 窗口标题,如果由loadURL()加载的HTML文件中含有标签&lt;title&gt;，该属性可忽略         icon: nativeImage.createFromPath('public/favicon.ico'), // "string" || nativeImage.createFromPath('public/favicon.ico')从位于 path 的文件创建新的 NativeImage 实例         webPreferences: { // 网页功能设置             webviewTag: true, // 是否使用&lt;webview&gt;标签 在一个独立的 frame 和进程里显示外部 web 内容             webSecurity: false, // 禁用同源策略             preload: path.join(__dirname, 'preload.js'),             nodeIntegration: true // 是否启用node集成 渲染进程的内容有访问node的能力,建议设置为true, 否则在render页面会提示node找不到的错误         }     })       // 加载应用 --打包react应用后，__dirname为当前文件路径     // mainWindow.loadURL(url.format({     //   pathname: path.join(__dirname, './build/index.html'),     //   protocol: 'file:',     //   slashes: true     // }));           // 因为我们是加载的react生成的页面，并不是静态页面     // 所以loadFile换成loadURL。     // 加载应用 --开发阶段  需要运行 yarn start     mainWindow.loadURL('http://localhost:3000');      // 解决应用启动白屏问题     mainWindow.on('ready-to-show', () =&gt; {         mainWindow.show();         mainWindow.focus();     });      // 当窗口关闭时发出。在你收到这个事件后，你应该删除对窗口的引用，并避免再使用它。     mainWindow.on('closed', () =&gt; {         mainWindow = null;     });          // 在启动的时候打开DevTools     mainWindow.webContents.openDevTools() }  app.allowRendererProcessReuse =true;  // This method will be called when Electron has finished // initialization and is ready to create browser windows. // Some APIs can only be used after this event occurs. app.whenReady().then(() =&gt;{     console.log('qpp---whenready');     createWindow();})  // Quit when all windows are closed. app.on('window-all-closed', function () {     // On macOS it is common for applications and their menu bar     // to stay active until the user quits explicitly with Cmd + Q     console.log('window-all-closed');     if (process.platform !== 'darwin') app.quit() })  app.on('activate', function () {     // On macOS it's common to re-create a window in the app when the     // dock icon is clicked and there are no other windows open.     if (BrowserWindow.getAllWindows().length === 0) createWindow() })  // In this file you can include the rest of your app's specific main process // code. You can also put them in separate files and require them here.</code></pre> <p><strong>package.json</strong></p> <p>这时候我们来修改<code>package.json</code>文件。</p> <ol> <li>配置启动文件，添加<code>main</code>字段，我们这里也就是main.js文件。如果没有添加，Electron 将尝试加载包含在<code>package.json</code>文件目录中的<code>index.js</code>文件。</li> <li>配置运行命令，使用<strong>"electron": "electron ."</strong> 区别于react的启动命令<strong>"start": "react-scripts start",</strong></li> <li>安装concurrently:<code>yarn add concurrently</code></li> </ol> <pre><code class="language-json">{     ...     "main": "main.js", // 配置启动文件   	"homepage": ".", // 设置应用打包的根路径     "scripts": {         "start": "react-scripts start",  // react 启动命令         "build": "react-scripts build",         "test": "react-scripts test",         "eject": "react-scripts eject",         "electron": "electron .",  // electron 启动命令         "dev": "concurrently \"npm run start\" \"npm run electron\""     }, }</code></pre> <p><strong>preload.js</strong></p> <pre><code class="language-js">window.addEventListener('DOMContentLoaded', () =&gt; {     const replaceText = (selector, text) =&gt; {         const element = document.getElementById(selector)             if (element) element.innerText = text     }        for (const dependency of ['chrome', 'node', 'electron']) {         replaceText(`${dependency}-version`, process.versions[dependency])     } })</code></pre> <p><strong>此时的工程架构</strong></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/21bda287cdd4e0cdf3a621ecc3d9347e.jpg" alt="Electron结合React和TypeScript进行开发"></p> <h3 id="25-运行electron项目">2.5 运行electron项目</h3> <ol> <li>先<code>yarn start</code> 然后再开一个终端<code>yarn electron</code></li> <li>或者是<code>npm run dev</code></li> </ol> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/411dcebe0cf8f95220fabc19a26539ea.jpg" alt="Electron结合React和TypeScript进行开发"></p> <p>其实我们就可以看出Electron就是一个应用套了一个谷歌浏览器壳子，然后里面是前端页面。</p> <h3 id="26-打包项目">2.6 打包项目</h3> <p>使用<strong>electron-packager</strong>依赖：</p> <pre><code>yarn add --dev electron-packager</code></pre> <p>package.json配置打包命令：</p> <pre><code class="language-json">"package": "electron-packager . bleak-electron-app --platform=win32 --arch=x64 --overwrite --electron-version=18.1.0 --icon=./public/favicon.ico"</code></pre> <p>配置解释：</p> <pre><code>electron-packager &lt;应用目录&gt; &lt;应用名称&gt; &lt;打包平台&gt; &lt;架构x86 还是 x64&gt; &lt;架构&gt; &lt;electron版本&gt; &lt;图标&gt; overwrite 如果输出目录已经存在，替换它</code></pre> <p>然后运行命令：</p> <pre><code>yarn package</code></pre> <p>打包时间慢的话可按照下面两种方式优化:</p> <pre><code>方法1： 在执行electron-packager前先运行set ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/ 方法2： 在electron-packager命令行加入参数--download.mirrorOptions.mirror=https://npm.taobao.org/mirrors/electron/ (Windows x64)完整版如下： electron-packager . bleak-electron-app --platform=win32 --arch=x64 --overwrite --electron-version=18.0.4 --download.mirrorOptions.mirror=https://npm.taobao.org/mirrors/electron/</code></pre> <p>然后运行<code>bleak-electron-app-win32-x64</code>里面的exe文件就可以了。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/6ab8c596a5da2c191d158537a19f1b57.jpg" alt="Electron结合React和TypeScript进行开发"></p> <h2 id="3-自动刷新页面">3. 自动刷新页面</h2> <p>当你用react开发的时候，网页内容会自动热更新，但是electron窗口的main.js中代码发生变化时不能热加载。</p> <p>安装插件electron-reloader：</p> <pre><code>yarn add --dev electron-reloader npm install --save-develectron-reloader</code></pre> <p>然后在路口引用插件:</p> <pre><code class="language-js">const reloader = require('electron-reloader') reloader(module)</code></pre> <p>就可以实现electron插件热更新。</p> <h2 id="4-主进程和渲染进程">4. 主进程和渲染进程</h2> <p>Electron运行package.json的main脚本的进程称为<strong>主进程</strong>。在主进程中运行的脚本通过创建web页面来展示用户节面，一个Electron应用总是有且只有一个主进程。</p> <p>由于Electron使用了Chromium来展示web页面，所以Chromium的多进程架构也被使用到，每个Electron钟大哥web页面运行在它的叫<strong>渲染进程</strong>的进程中。</p> <p>在普通的浏览器中，web页面无法访问操作系统的原生资源。然而Electron的用户在Node.js的API支持下可以在页面中和操作系统进行一些底层交互。</p> <p>ctrl + shift + i 打开渲染进程调试(devtools)</p> <p>默认打开调试：</p> <pre><code class="language-tsx">// 在启动的时候打开DevTools mainWindow.webContents.openDevTools()</code></pre> <h2 id="5定义原生菜单顶部菜单">5.定义原生菜单、顶部菜单</h2> <h3 id="51-自定义菜单">5.1 自定义菜单</h3> <p>可以使用Menu菜单来创建原生应用菜单和上下文菜单。</p> <ol> <li>首先判断是什么平台，是mac还是其他：</li> </ol> <pre><code class="language-js">const isMac = process.platform === 'darwin'</code></pre> <ol start="2"> <li>创建菜单模板：</li> </ol> <p>其是由一个个MenuItem组成的，可以在<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.electronjs.org/zh/docs/latest/api/menu-item"  target="_blank" rel="nofollow">菜单项官网API</a>查看。</p> <pre><code class="language-js">const template = [   // { role: 'appMenu' }   // 如果是mac系统才有   ...(isMac ? [{     label: app.name,     submenu: [       { role: 'about' },       { type: 'separator' },       { role: 'services' },       { type: 'separator' },       { role: 'hide' },       { role: 'hideOthers' },       { role: 'unhide' },       { type: 'separator' },       { role: 'quit' }     ]   }] : []),   // { role: 'fileMenu' }   {     label: '文件',     submenu: [       isMac ? { role: 'close' } : { role: 'quit', label: '退出' }     ]   },   // { role: 'editMenu' }   {     label: '编辑',     submenu: [       { role: 'undo', label: '撤消' },       { role: 'redo', label: '恢复' },       { type: 'separator' },       { role: 'cut', label: '剪切' },       { role: 'copy', label: '复制' },       { role: 'paste', label: '粘贴' },       ...(isMac ? [         { role: 'pasteAndMatchStyle' },         { role: 'delete' },         { role: 'selectAll' },         { type: 'separator' },         {           label: 'Speech',           submenu: [             { role: 'startSpeaking' },             { role: 'stopSpeaking' }           ]         }       ] : [         { role: 'delete', label: '删除' },         { type: 'separator' },         { role: 'selectAll', label: '全选' }       ])     ]   },   // { role: 'viewMenu' }   {     label: '查看',     submenu: [       { role: 'reload', label: '重新加载' },       { role: 'forceReload', label: '强制重新加载' },       { role: 'toggleDevTools', label: '切换开发工具栏' },       { type: 'separator' },       { role: 'resetZoom', label: '原始开发工具栏窗口大小' },       { role: 'zoomIn', label: '放大开发工具栏窗口'},       { role: 'zoomOut', label: '缩小开发工具栏窗口' },       { type: 'separator' },       { role: 'togglefullscreen', label:'切换开发工具栏全屏' }     ]   },   // { role: 'windowMenu' }   {     label: '窗口',     submenu: [       { role: 'minimize', label:'最小化' },       ...(isMac ? [         { type: 'separator' },         { role: 'front' },         { type: 'separator' },         { role: 'window' }       ] : [         { role: 'close', label: '关闭' }       ])     ]   },   {     role: 'help',     label: '帮助',     submenu: [       {         label: '从Electron官网学习更多',         click: async () =&gt; {           const { shell } = require('electron')           await shell.openExternal('https://electronjs.org')         }       }     ]   } ]</code></pre> <ol start="3"> <li>根据模板创建menu:</li> </ol> <pre><code class="language-js">const menu = Menu.buildFromTemplate(template)</code></pre> <ol start="4"> <li>设置菜单:</li> </ol> <pre><code class="language-js">Menu.setApplicationMenu(menu)</code></pre> <h3 id="52-给菜单定义点击事件">5.2 给菜单定义点击事件</h3> <p>可以通过<code>click</code>属性来设置点击事件</p> <h3 id="53-抽离菜单定义">5.3 抽离菜单定义</h3> <p>创建一个menu.js：</p> <pre><code class="language-js">const {app, Menu } = require('electron')  const isMac = process.platform === 'darwin'  const template = [   // { role: 'appMenu' }   // 如果是mac系统才有   ...(isMac ? [{     label: app.name,     submenu: [       { role: 'about' },       { type: 'separator' },       { role: 'services' },       { type: 'separator' },       { role: 'hide' },       { role: 'hideOthers' },       { role: 'unhide' },       { type: 'separator' },       { role: 'quit' }     ]   }] : []),   // { role: 'fileMenu' }   {     label: '文件',     submenu: [       isMac ? { role: 'close' } : { role: 'quit', label: '退出' }     ]   },   // { role: 'editMenu' }   {     label: '编辑',     submenu: [       { role: 'undo', label: '撤消' },       { role: 'redo', label: '恢复' },       { type: 'separator' },       { role: 'cut', label: '剪切' },       { role: 'copy', label: '复制' },       { role: 'paste', label: '粘贴' },       ...(isMac ? [         { role: 'pasteAndMatchStyle' },         { role: 'delete' },         { role: 'selectAll' },         { type: 'separator' },         {           label: 'Speech',           submenu: [             { role: 'startSpeaking' },             { role: 'stopSpeaking' }           ]         }       ] : [         { role: 'delete', label: '删除' },         { type: 'separator' },         { role: 'selectAll', label: '全选' }       ])     ]   },   // { role: 'viewMenu' }   {     label: '查看',     submenu: [       { role: 'reload', label: '重新加载' },       { role: 'forceReload', label: '强制重新加载' },       { role: 'toggleDevTools', label: '切换开发工具栏' },       { type: 'separator' },       { role: 'resetZoom', label: '原始开发工具栏窗口大小' },       { role: 'zoomIn', label: '放大开发工具栏窗口'},       { role: 'zoomOut', label: '缩小开发工具栏窗口' },       { type: 'separator' },       { role: 'togglefullscreen', label:'切换开发工具栏全屏' }     ]   },   // { role: 'windowMenu' }   {     label: '窗口',     submenu: [       { role: 'minimize', label:'最小化' },       ...(isMac ? [         { type: 'separator' },         { role: 'front' },         { type: 'separator' },         { role: 'window' }       ] : [         { role: 'close', label: '关闭' }       ])     ]   },   {     role: 'help',     label: '帮助',     submenu: [       {         label: '从Electron官网学习更多',         click: async () =&gt; {           const { shell } = require('electron')           await shell.openExternal('https://electronjs.org')         }       }     ]   } ]  const menu = Menu.buildFromTemplate(template) Menu.setApplicationMenu(menu)</code></pre> <p>然后在<code>main.js</code>中<code>createWindow</code>的方法使用<code>require</code>调用:</p> <pre><code class="language-js">const createWindow = () =&gt; {     ......     require('./menu')     ...... }</code></pre> <h3 id="54-自定义顶部菜单">5.4 自定义顶部菜单</h3> <p>我们可以自定义顶部菜单,通过以下两个步骤进行：</p> <ul> <li>先通过frame创建无边框窗口。</li> </ul> <pre><code class="language-js">function createWindow () {     const mainWindow = new BrowserWindow({         ......         frame: false     })     }</code></pre> <ul> <li>然后再通过前端页面布局设置顶部菜单</li> </ul> <p>如果想让顶部菜单支持拖拽，可以加如下css：</p> <pre><code>-webkit-app-region: drag;</code></pre> <h3 id="55-在渲染进程中使用主进程方法remote和electron点击创建新窗口">5.5 在渲染进程中使用主进程方法remote和electron（点击创建新窗口）</h3> <p>我们想要通过<strong>remote</strong>来使用主进程方法和功能。</p> <ol> <li>首先要安装<code>@electron/remote</code></li> </ol> <pre><code class="language-tsx">yarn add @electron/remote</code></pre> <ol start="2"> <li>在主进程main.js中配置remote：</li> </ol> <pre><code class="language-tsx">const remote = require("@electron/remote/main") remote.initialize()  const createWindow = () =&gt; {     let mainWindow = new BrowserWindow({         ......         webPreferences: { // 网页功能设置         	......             nodeIntegration: true, // 是否启用node集成 渲染进程的内容有访问node的能力,建议设置为true, 否则在render页面会提示node找不到的错误             contextIsolation : false, //允许渲染进程使用Nodejs         }     })     remote.enable(mainWindow.webContents) }</code></pre> <ol start="3"> <li>在渲染进程中使用remote的BrowserWindow：App.tsx</li> </ol> <pre><code class="language-tsx">import React from 'react' // 使用electron的功能 // const electron = window.require('electron') // 使用remote const { BrowserWindow } = window.require("@electron/remote")  export default function App() {   const openNewWindow = () =&gt; {     new BrowserWindow({       width:500,       height:500     })   }    return (     &lt;div&gt;       App       &lt;div&gt;         &lt;button onClick={openNewWindow}&gt;点我开启新窗口&lt;/button&gt;       &lt;/div&gt;     &lt;/div&gt;   ) }</code></pre> <p>我们想要通过使用electron提供给渲染进程的API：</p> <pre><code class="language-tsx">const electron = window.require('electron')</code></pre> <p>然后从electron中提取方法。</p> <h3 id="56-点击打开浏览器">5.6 点击打开浏览器</h3> <p>使用electron中的shell可以实现此功能：</p> <pre><code class="language-tsx">import React from 'react' // 使用electron的功能 // const electron = window.require('electron') // 使用remote // const { BrowserWindow } = window.require("@electron/remote") // 使用shell const { shell } = window.require('electron')  export default function App() {   const openNewWindow = () =&gt; {     shell.openExternal('https://www.baidu.com')   }    return (     &lt;div&gt;       App       &lt;div&gt;         &lt;button onClick={openNewWindow}&gt;点我开启新窗口打开百度&lt;/button&gt;       &lt;/div&gt;     &lt;/div&gt;   ) }</code></pre> <h2 id="6-打开对话框读取文件">6. 打开对话框读取文件</h2> <h3 id="61-读取文件">6.1 读取文件</h3> <p>主进程中的dialog模块可以显示用于打开和保存文件、警报等的本机系统对话框。</p> <p>因为dialog模块属于主进程，如果我们在渲染进程中需要使用则需要使用remote模块。</p> <p><strong>App.tsx</strong></p> <pre><code class="language-tsx">import React,{ useRef } from 'react' // 使用electron的功能 // const electron = window.require('electron')  // 使用remote // const remote = window.require('@electron/remote') // const { BrowserWindow } = window.require("@electron/remote") const { dialog } = window.require("@electron/remote")  // 使用shell const { shell } = window.require('electron')  // 使用fs const fs = window.require('fs')  export default function App() {   // ref    const textRef = useRef&lt;HTMLTextAreaElement | null&gt;(null)    const openNewWindow = () =&gt; {     shell.openExternal('https://www.baidu.com')   }    const openFile = () =&gt; {     const res = dialog.showOpenDialogSync({       title: '读取文件', // 对话框窗口的标题       buttonLabel: "读取", // 按钮的自定义标签, 当为空时, 将使用默认标签。       filters: [ // 用于规定用户可见或可选的特定类型范围         //{ name: 'Images', extensions: ['jpg', 'png', 'gif', 'jpeg', 'webp'] },         //{ name: 'Movies', extensions: ['mkv', 'avi', 'mp4'] },         { name: 'Custom File Type', extensions: ['js'] },         { name: 'All Files', extensions: ['*'] },       ]     })     const fileContent:string  = fs.readFileSync(res[0]).toString();     (textRef.current as HTMLTextAreaElement).value = fileContent   }    return (     &lt;div&gt;       App Test       &lt;div&gt;         &lt;button onClick={openNewWindow}&gt;点我开启新窗口打开百度&lt;/button&gt;       &lt;/div&gt;       &lt;div&gt;         &lt;button onClick={openFile}&gt;打开文件&lt;/button&gt;         &lt;textarea ref={textRef}&gt;&lt;/textarea&gt;       &lt;/div&gt;     &lt;/div&gt;   ) }</code></pre> <h3 id="62-保存文件">6.2 保存文件</h3> <p>保存文件需要使用dialog函数里的<code>showSaveDialogSync</code>，与之前的读取文件所用到的<code>showOpenDialogSync</code>类似:</p> <pre><code class="language-tsx">const saveFile = () =&gt; {     const res = dialog.showSaveDialogSync({         title:'保存文件',         buttonLable: "保存",         filters: [             { name: 'index', extensions: ['js']}         ]     })     fs.writeFileSync(res, textRef.current?.value) }</code></pre> <h2 id="7-定义快捷键">7. 定义快捷键</h2> <h3 id="71-主线程定义">7.1 主线程定义</h3> <p>引入<code>globalShortcut</code></p> <pre><code class="language-js">const {app, BrowserWindow, nativeImage, globalShortcut } = require('electron')</code></pre> <p>注册快捷键打印字符串、窗口最大化、窗口最小化、关闭窗口。</p> <pre><code class="language-js">const createWindow = () =&gt; {     ......     // 注册快捷键     globalShortcut.register('CommandOrControl+X', () =&gt; {         console.log('CommandOrControl + X is pressed')     })      globalShortcut.register('CommandOrControl+M', () =&gt; {         mainWindow.maximize()     })      globalShortcut.register('CommandOrControl+T', () =&gt; {         mainWindow.unmaximize()     })      globalShortcut.register('CommandOrControl+H', () =&gt; {         mainWindow.close()     })      // 检查快捷键是否注册成功     // console.log(globalShortcut.isRegistered('CommandOrControl+X')) }  // 将要退出时的生命周期，注销快捷键 app.on('will-quit', () =&gt; {     // 注销快捷键     globalShortcut.unregister('CommandOrControl+X')     // 注销所有快捷键     globalShortcut.unregisterAll() })</code></pre> <h3 id="72在渲染进程中定义">7.2在渲染进程中定义</h3> <p>通过retmote来定义</p> <pre><code class="language-tsx">const { globalShortcut } = window.require("@electron/remote")   globalShortcut.register("Ctrl+O", () =&gt; {     console.log('ctrl+O is pressed.') })</code></pre> <h2 id="8-主进程和渲染进程通讯">8. 主进程和渲染进程通讯</h2> <p>在渲染进程使用ipcRenderer，主进程使用ipcMain，可以实现主进程和渲染进程的通讯：</p> <p>App.tsx</p> <pre><code class="language-tsx">...... import React,{ useState, useRef } from 'react' const { shell, ipcRenderer } = window.require('electron') export default function App() {     // state   	const [windowSize, setWindowSize] = useState('max-window')     ......     // 传参     const maxWindow = () =&gt; {         ipcRenderer.send('max-window', windowSize);         if(windowSize === 'max-window') {             setWindowSize('unmax-window')         } else {             setWindowSize('max-window')         }     }         ......         return (             &lt;div&gt;                     &lt;div&gt;                         &lt;button onClick={maxWindow}&gt;与主进程进行通讯，窗口最大化或取消窗口最大化&lt;/button&gt;                     &lt;/div&gt;                 &lt;/div&gt;             &lt;/div&gt;         ) }</code></pre> <p>main.js</p> <pre><code class="language-js">const {app, BrowserWindow, nativeImage, globalShortcut, ipcMain } = require('electron') const createWindow = () =&gt; {     let mainWindow = ......     ......     // 定义通讯事件     ipcMain.on('max-window', (event, arg) =&gt; {         if(arg === 'max-window') {             mainWindow.maximize()         } else if (arg === 'unmax-window') {             mainWindow.unmaximize()         }     })     ...... } ......</code></pre> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-37110.htm">宠物犬领养平台电话（宠物领养站哪里有）</a></p>
+                                        <p>下一个：<a href="/news/article-37599.htm">动物防疫站营业时间 动物防疫站营业时间查询</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-node-share.htm" title="10月8日→20.3M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月8日→20.3M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-33271.htm" title="动物防疫疫苗费取消的相关文件有哪些 动物防疫疫苗费取消的相关文件有哪些内容">动物防疫疫苗费取消的相关文件有哪些 动物防疫疫苗费取消的相关文件有哪些内容</a></li>
+                        <li class="py-2"><a href="/news/article-36626.htm" title="Java详细讲解不同版本的接口语法和抽象类与接口的区别_java">Java详细讲解不同版本的接口语法和抽象类与接口的区别_java</a></li>
+                        <li class="py-2"><a href="/news/article-31847.htm" title="动物疫苗产业链分析（动物疫苗产业链分析论文）">动物疫苗产业链分析（动物疫苗产业链分析论文）</a></li>
+                        <li class="py-2"><a href="/news/article-20677.htm" title="python的eval和json.loads(),json.dumps()">python的eval和json.loads(),json.dumps()</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-free-high-speed-nodes.htm" title="11月18日→21.5M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月18日→21.5M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-today-mihomo-node.htm" title="11月29日→22M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月29日→22M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-free-subscribe-node.htm" title="12月26日→20.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月26日→20.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-1-free-subscribe-node.htm" title="1月1日→20.4M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月1日→20.4M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-36625.htm" title="【Azure Developer】使用 CURL 获取 Key Vault 中 Secrets 中的值">【Azure Developer】使用 CURL 获取 Key Vault 中 Secrets 中的值</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                                <p>
+                                    <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
