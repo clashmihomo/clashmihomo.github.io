@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashmihomo.github.io/news/article-48972.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>分享两个实用的shell脚本</title>
+        <meta name="description" content="各位，早上好啊~ 发现许久没有分享过技术文章了，今天分享两个部署项目时候比较实用的shell脚本 一键部署shell脚本 由于个人部署，会习惯把jar放到lib目录下面，如果你没有这个习惯，可以适当做" />
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Mihomo免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashmihomo.github.io/news/article-48972.htm" />
+    <meta property="og:site_name" content="Clash Mihomo免费机场订阅节点官网" />
+    <meta property="og:title" content="分享两个实用的shell脚本" />
+    <meta property="og:image" content="https://clashmihomo.github.io/uploads/20240920-1/93ab6bd14d9c3942e768887175668d13.webp" />
+        <meta property="og:release_date" content="2025-01-31T07:18:50" />
+    <meta property="og:updated_time" content="2025-01-31T07:18:50" />
+        <meta property="og:description" content="各位，早上好啊~ 发现许久没有分享过技术文章了，今天分享两个部署项目时候比较实用的shell脚本 一键部署shell脚本 由于个人部署，会习惯把jar放到lib目录下面，如果你没有这个习惯，可以适当做" />
+        
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="分享两个实用的shell脚本">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN7DJKT3D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZN7DJKT3D0');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>Clash Mihomo</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>分享两个实用的shell脚本</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>各位，早上好啊~ 发现许久没有分享过技术文章了，今天分享两个部署项目时候比较实用的shell脚本</p> <h3 id="一键部署shell脚本">一键部署shell脚本</h3> <p>由于个人部署，会习惯把jar放到lib目录下面，如果你没有这个习惯，可以适当做一些修改。该脚本提供了一键启动、停止、重启、检查操作</p> <details> <summary>deploy.sh代码</summary> <pre><code>#!/bin/bash  #这里可替换为你自己的执行程序，其他代码无需更改  cd ../lib/ jar_path=`pwd` APP_NAME=`ls -al  *.jar | awk '{print $9}'` #使用说明，用来提示输入参数 usage() {     echo "Usage: sh robotcenter.sh [start|stop|restart|status]"     exit 1 }  #检查程序是否在运行 is_exist(){   pid=`ps -ef|grep $APP_NAME|grep -v grep|awk '{print $2}'`   #如果不存在返回1，存在返回0        if [ -z "${pid}" ]; then    return 1   else     return 0   fi }  #启动方法 start(){   is_exist   if [ $? -eq 0 ]; then     echo "${APP_NAME} is already running. pid=${pid}"   else     cd /home/dtx/common-shell     echo `pwd`     # 引入公用shell脚本参数，可以自行考虑需不需要     . common_params.sh     echo "启动堆大小: $java_mem_size"     echo "------------------------------------------------------------------------------------------------------------"     echo "java_gc: $java_gc"     echo "------------------------------------------------------------------------------------------------------------"     echo "启动profile参数：$profile"     cd ${jar_path}     nohup java  ${java_mem_size} ${java_gc}  -jar ${APP_NAME} ${profile} &gt;/dev/null 2&gt;&amp;1 &amp;     is_exist     if [ $? -eq 0 ]; then        echo "${APP_NAME} is running"     else        echo "${APP_NAME} is running failed"     fi     sleep 2   fi }  #停止方法 stop(){   is_exist   if [ $? -eq "0" ]; then     kill -9 $pid     echo "${APP_NAME} has stopped"   else     echo "${APP_NAME} is not running"   fi   }  #输出运行状态 status(){   is_exist   if [ $? -eq "0" ]; then     echo "${APP_NAME} is running. Pid is ${pid}"   else     echo "${APP_NAME} is NOT running."   fi }  #重启 restart(){   stop   sleep 5   start }  #根据输入参数，选择执行对应方法，不输入则执行使用说明 case "$1" in   "start")     start     ;;   "stop")     stop     ;;   "status")     status     ;;   "restart")     restart     ;;   *)     usage     ;; esac</code></pre> </details> <p>重启效果如下</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/aae8ef003195d2bb88196e99262d5237.jpg" alt="分享两个实用的shell脚本"></p> <h3 id="彩色日志操作">彩色日志操作</h3> <p>也是由于个人习惯，回把log4j打印的日志放到logs文件下面，可以自行做一些小调整即可</p> <details> <summary>colorfullog.sh代码</summary> <pre><code>#! /bin/bash tail  -300f  ../logs/stdout.log | perl -pe's/(INFO)|(DEBUG)|(WARN)|(ERROR)|(^[0-9-:.\s]{10,23})|((?&lt;=[OGNR]\s)[0-9]{1,5})|((?&lt;=\[.{15}\]\s).{1,40}(?=\s(:\s)|\s))/\e[1;32m$1\e[0m\e[1;36m$2\e[0m\e[1;33m$3\e[0m\e[1;31m$4\e[0m\e[1;34m$5\e[0m\e[1;35m$6\e[0m\e[1;36m$7\e[0m/g'</code></pre> </details> <p>打印出来的效果</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/c5824f529b13f2d97320cd00e78323a5.jpg" alt="分享两个实用的shell脚本"></p> <h3 id="再进一步操作">再进一步操作</h3> <p>微服务时代，项目肯定是不会只有一个jar的，就拿本人自己写的项目来看（也是因为没有采用容器化部署，感觉搞不好，坑太多了），目前也是6个包了，尽管上述操作也还简单方便，只需要进到每个模块里面，执行deploy.sh即可</p> <p>不过本着精益求精的思想理念，到底有没有更加好方法，可以一劳永逸的，即使之后加服务，不需要修改太多东西的操作</p> <p>基于此，在模块平级里，新建一个common-shell的文件夹，里面放一个deploy_all.sh</p> <details> <summary>deploy_all.sh代码</summary> <pre><code>#! /bin/bash ## author:Amg ## 该shell脚本用于一键启动、停止、重启所有设置好的jar文件  cd .. base_path=`pwd` # 即使加服务，只要符合约定就可以被扫描出来 centers=`ls -al | grep dtx | awk '{print $9}'` echo "---------------------base path: ${base_path} ------------------------"  ## 启动所有项目 start(){    for line in $centers  do    jarPath=${base_path}/$line/bin/    echo "当前所在目录: ${jarPath},即将启动目录下的jar "    cd ${jarPath}    sh deploy.sh start    echo "================================"  done }  ## 停止所有项目 stop(){    for line in $centers  do    jarPath=${base_path}/$line/bin/    echo "当前所在目录: ${jarPath},即将停止目录下的jar "    cd ${jarPath}    sh deploy.sh stop    echo "================================"  done }   ## 重启所有项目 restart(){    for line in $centers  do    jarPath=${base_path}/$line/bin/    echo "当前所在目录: ${jarPath},即将重启目录下的jar "    cd ${jarPath}    sh deploy.sh restart    echo "================================"  done }  ##检查项目状态 status(){   for line in $centers  do    jarPath=${base_path}/$line/bin/    echo "当前所在目录: ${jarPath},即将检查目录下的jar运行情况"    cd ${jarPath}    sh deploy.sh status    echo "================================"  done  }  usage(){  echo "该脚本用于一键启停，具体用法有start、stop、restart status" } #根据输入参数，选择执行对应方法，不输入则执行使用说明 case "$1" in   "start")     start     ;;   "stop")     stop     ;;   "status")     status     ;;   "restart")     restart     ;;   *)     usage     ;; esac</code></pre> </details> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/d91a47520209b5de47a63d8e8dbff7c8.jpg" alt="分享两个实用的shell脚本"></p> <p>该脚本的作用其实很简单，就是不断的循环进入到各个具体的模块，调用上面的deploy脚本，进行一系列的操作</p> <p><strong>基于约定大于配置的思想，如果我们后续加服务，只需要在平级下面创建相同规则的文件夹，里面的结构也是存放lib,logs,bin即可</strong></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-48378.htm">上海出名的宠物医院排名（上海出名的宠物医院排名第一）</a></p>
+                                        <p>下一个：<a href="/news/article-48973.htm">动物接种疫苗后产生的免疫称为 动物接种疫苗后产生的免疫称为什么</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-10-mihomo-node-share.htm" title="10月10日→20.2M/S|2024年最新免费节点Clash Mihomo订阅链接地址">10月10日→20.2M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-11-free-node-subscribe-links.htm" title="1月11日→19M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月11日→19M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-38584.htm" title="成都宠物托运价格表查询官网（成都宠物托运价格表查询官网）">成都宠物托运价格表查询官网（成都宠物托运价格表查询官网）</a></li>
+                        <li class="py-2"><a href="/news/article-20216.htm" title="win11系统怎么关闭自动锁屏">win11系统怎么关闭自动锁屏</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-17-latest-mihomo-node.htm" title="1月17日→21.5M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月17日→21.5M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25286.htm" title="疫苗的种类包括动物疫苗吗为什么（疫苗的种类包括动物疫苗吗为什么没有）">疫苗的种类包括动物疫苗吗为什么（疫苗的种类包括动物疫苗吗为什么没有）</a></li>
+                        <li class="py-2"><a href="/news/article-35185.htm" title="宠物用疫苗可以带上高铁吗北京地区（宠物疫苗能上地铁吗）">宠物用疫苗可以带上高铁吗北京地区（宠物疫苗能上地铁吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-19-mihomo-github.htm" title="12月19日→19.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月19日→19.7M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-39066.htm" title="让猫挠了轻微出血需要打针吗多少钱（让猫挠了轻微出血,打几针?）">让猫挠了轻微出血需要打针吗多少钱（让猫挠了轻微出血,打几针?）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-node-share.htm" title="11月25日→18.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月25日→18.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                                <p>
+                                    <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
