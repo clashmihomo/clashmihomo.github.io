@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashmihomo.github.io/news/article-58804.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sql server排查死锁优化性能_MsSql_</title>
+        <meta name="description" content="node:1 部分显示的几个关键信息：  node:2 部分显示的几个关键信息 目录  			 一.概述 记得以前客户在使用软件时，有偶发出现死锁问题，因为发生的时间不确定，不好做问题的重现，当时解决" />
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Mihomo免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashmihomo.github.io/news/article-58804.htm" />
+    <meta property="og:site_name" content="Clash Mihomo免费机场订阅节点官网" />
+    <meta property="og:title" content="sql server排查死锁优化性能_MsSql_" />
+    <meta property="og:image" content="https://clashmihomo.github.io/uploads/20240920-1/b85017d470a4b62fe6bd085f35865ade.webp" />
+        <meta property="og:release_date" content="2025-02-18T09:46:09" />
+    <meta property="og:updated_time" content="2025-02-18T09:46:09" />
+        <meta property="og:description" content="node:1 部分显示的几个关键信息：  node:2 部分显示的几个关键信息 目录  			 一.概述 记得以前客户在使用软件时，有偶发出现死锁问题，因为发生的时间不确定，不好做问题的重现，当时解决" />
+        
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="sql server排查死锁优化性能_MsSql_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN7DJKT3D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZN7DJKT3D0');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>Clash Mihomo</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>sql server排查死锁优化性能_MsSql_</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				  			 <div id="log-box">  				<div id="catalog"><ul id="catalog-ul"> <li><i class="be be-arrowright"></i> <a href="#title-0" title="node:1 部分显示的几个关键信息：">node:1 部分显示的几个关键信息：</a></li> <li><i class="be be-arrowright"></i> <a href="#title-1" title="node:2 部分显示的几个关键信息">node:2 部分显示的几个关键信息</a></li> </ul><span class="log-zd"><span class="log-close"><a title="隐藏目录"><i class="be be-cross"></i><strong>目录</strong></a></span></span></div>  			</div> <h2>一.概述</h2> <p>记得以前客户在使用软件时，有偶发出现死锁问题，因为发生的时间不确定，不好做问题的重现，当时解决问题有点棘手了。现总结下查看死锁的常用二种方式。</p> <h3>1.1 第一种是图形化监听：</h3> <p>sqlserver --&gt;工具--&gt; sql server profiler 登录后在跟踪属性中选择如下图：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220416/38488cbadb224ca224c412f7aecd926d.jpg"></p> <p>监听到的死锁图形如下图</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220416/6884a9363f781edc6a0de2c4c8159eea.jpg"></p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220416/b48411a6590446e1c2cca8b2b2c2da5e.jpg"></p> <p>这里的描述大致是：有二个进程 一个进程ID是96， 另一个ID是348. 系统自动kill 掉了进程ID:96,保留了进程ID:348 的事务Commit。</p> <p>上面死锁是由于批量更新出现PAG范围锁， 双方进程在同一分区索引资源上。ID96，348都请求想获取更新锁(U)，各占排它锁(x)不释放，直到锁超时。</p> <h3>1.2 第二种是使用日志跟踪（errorlog）</h3> <p>以全局方式打开指定的跟踪标记</p> <div class="ay1code"> <pre class="brush:sql;">DBCC TRACEON(1222,-1)  DBCC TRACEON(1204,-1)</pre> </div> <p>使用 EXEC master..xp_readerrorlog 查看日志。 </p> <div class="ay1code"> <pre class="brush:plain;">Deadlock encountered .... Printing deadlock information  Wait-for graph  NULL  Node:1   PAGE: 7:1:6229275 CleanCnt:2 Mode:IX Flags: 0x3  Grant List 3:  Owner:0x00000004E99B7880 Mode: IX Flg:0x40 Ref:1 Life:02000000 SPID:219 ECID:0 XactLockInfo: 0x0000000575C7E970  SPID: 219 ECID: 0 Statement Type: UPDATE Line #: 84  Input Buf: Language Event: exec proc_PUB_StockDataImport  Requested by:   ResType:LockOwner Stype:'OR'Xdes:0x0000000C7A905D30 Mode: U SPID:64 BatchID:0 ECID:59 TaskProxy:(0x0000000E440AAFE0) Value:0x8d160240 Cost:(0/0)  NULL    Node:2   PAGE: 7:1:5692366 CleanCnt:2 Mode:U Flags: 0x3  Grant List 3:  Owner:0x0000000D12099B80 Mode: U Flg:0x40 Ref:0 Life:00000001 SPID:64 ECID:0 XactLockInfo: 0x000000136B4758F0  SPID: 64 ECID: 0 Statement Type: UPDATE Line #: 108  Input Buf: RPC Event: Proc [Database Id = 7 Object Id = 907150277]</pre> </div> <span class="directory"></span><h4 id="title-0">node:1 部分显示的几个关键信息：</h4> <p>PAGE 7:1:6229275（所在数据库ID 7， 1分区， 6229275行数）</p> <p>Mode: IX 锁的模式 意向排它锁</p> <p>SPID: 219 进程ID</p> <p>Event: exec proc_PUB_StockDataImport 执行的存储过程名</p> <span class="directory"></span><h4 id="title-1">node:2 部分显示的几个关键信息</h4> <p>PAGE 7:1:5692366 （所在数据库ID 7， 1分区，5692366行数）</p> <p>Mode:U锁的模式 更新锁</p> <p>RPC Event: Proc 远程调用</p> <p>SPID: 64 进程ID</p> <div class="ay1code"> <pre class="brush:plain;">Victim Resource Owner:  ResType:LockOwner Stype:'OR'Xdes:0x0000000C7A905D30 Mode: U SPID:64 BatchID:0 ECID:59 TaskProxy:(0x0000000E440AAFE0) Value:0x8d160240 Cost:(0/0)  deadlock-list  deadlock victim=process956f4c8  process-list  process id=process956f4c8 taskpriority=0 logused=0 waitresource=PAGE: 7:1:6229275 waittime=2034 ownerId=2988267079 transactionname=UPDATE   lasttranstarted=2018-04-19T13:54:00.360 XDES=0xc7a905d30 lockMode=U schedulerid=24 kpid=1308 status=suspended spid=64 sbid=0 ecid=59 priority=0 trancount=0   lastbatchstarted=2018-04-19T13:53:58.033 lastbatchcompleted=2018-04-19T13:53:58.033 clientapp=.Net SqlClient Data Provider hostname=VMSERVER76 hostpid=16328   isolationlevel=read committed (2) xactid=2988267079 currentdb=7 lockTimeout=4294967295 clientoption1=671088672 clientoption2=128056  executionStack  frame procname=Test.dbo.proc_CnofStock line=108 stmtstart=9068 stmtend=9336 sqlhandle=0x03000700c503123601ba25019ca800000100000000000000  update dbo.pub_stock  set UpdateTime=GETDATE()  from pub_stock a  join PUB_PlatfromStocktemp b on a.GUID=b.StockGuid</pre> </div> <p>从上面的信息能看到kill 掉的是进程id是process956f4c8，</p> <p>进程spid=64</p> <p>lockMode=U 获取更新锁</p> <p>isolationlevel=read committed</p> <p>executionStack 执行的堆信息：</p> <p>存储名 procname=Test.dbo.proc_CnofStock</p> <p>语句 <code>update dbo.pub_stock set UpdateTime=GETDATE()</code> ..</p> <p>clientapp 发起事件的来源</p> <h3>1.3 最后总结 避免死锁的解决方法</h3> <p>按同一顺序访问对象。</p> <p>优化索引,避免全表扫描,减少锁的申请数目.</p> <p>避免事务中的用户交互。</p> <p>使用基于行版本控制的隔离级别。</p> <p>将事务默认隔离级别的已提交读改成快照</p> <p><code>SET TRANSACTION ISOLATION LEVEL SNAPSHOT</code></p> <p>使用nolock去掉共享锁,但死锁发生在u锁或x锁上，则nolock不起作用</p> <p>升级锁颗粒度(页锁，表锁), 以阻塞还代替死锁</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-58803.htm">springboot数据导出</a></p>
+                                        <p>下一个：<a href="/news/article-59298.htm">宠物猫拿货（宠物猫从哪里进货）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-48378.htm" title="上海出名的宠物医院排名（上海出名的宠物医院排名第一）">上海出名的宠物医院排名（上海出名的宠物医院排名第一）</a></li>
+                        <li class="py-2"><a href="/news/article-22965.htm" title="vue2.x版本中computed和watch的使用入门详解-关联和区别_在线工具">vue2.x版本中computed和watch的使用入门详解-关联和区别_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-49488.htm" title="动物疫苗法律法规有哪些规定 动物疫苗法律法规有哪些规定要求">动物疫苗法律法规有哪些规定 动物疫苗法律法规有哪些规定要求</a></li>
+                        <li class="py-2"><a href="/news/article-53713.htm" title="开宠物粮食店 开宠物粮食店要多少钱">开宠物粮食店 开宠物粮食店要多少钱</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-node-subscribe.htm" title="12月17日→19.8M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月17日→19.8M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-22512.htm" title="动物疫苗使用注意事项有哪些呢（动物疫苗使用时的注意事项有哪些）">动物疫苗使用注意事项有哪些呢（动物疫苗使用时的注意事项有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-55904.htm" title="狗狗宠物市场（狗狗宠物市场前景）">狗狗宠物市场（狗狗宠物市场前景）</a></li>
+                        <li class="py-2"><a href="/news/article-50536.htm" title="幼猫怎么驱虫（幼猫怎么驱虫体内体外）">幼猫怎么驱虫（幼猫怎么驱虫体内体外）</a></li>
+                        <li class="py-2"><a href="/news/article-31282.htm" title="宠物店的粮适合买吗知乎推荐（宠物店卖的狗粮哪些牌子）">宠物店的粮适合买吗知乎推荐（宠物店卖的狗粮哪些牌子）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-node-share.htm" title="1月7日→21.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月7日→21.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                                <p>
+                                    <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

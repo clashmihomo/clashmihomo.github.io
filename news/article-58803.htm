@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashmihomo.github.io/news/article-58803.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>springboot数据导出</title>
+        <meta name="description" content="时间有限，下个版本上线，数据导出通用版，即直接在pojo类上将注解，即可生成Excel  1.1 引入依赖 !--Excel导出依赖 --&gt; &lt;dependency&gt;     &lt" />
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Mihomo免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashmihomo.github.io/news/article-58803.htm" />
+    <meta property="og:site_name" content="Clash Mihomo免费机场订阅节点官网" />
+    <meta property="og:title" content="springboot数据导出" />
+    <meta property="og:image" content="https://clashmihomo.github.io/uploads/20240920-1/07b6e58ce757ade5ffc90a2254887878.webp" />
+        <meta property="og:release_date" content="2025-02-18T09:46:09" />
+    <meta property="og:updated_time" content="2025-02-18T09:46:09" />
+        <meta property="og:description" content="时间有限，下个版本上线，数据导出通用版，即直接在pojo类上将注解，即可生成Excel  1.1 引入依赖 !--Excel导出依赖 --&gt; &lt;dependency&gt;     &lt" />
+        
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="springboot数据导出">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN7DJKT3D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZN7DJKT3D0');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>Clash Mihomo</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>springboot数据导出</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <p><mark>时间有限，下个版本上线，数据导出通用版，即直接在pojo类上将注解，即可生成Excel</mark></p> <h2> <a id="11__2" rel="nofollow"></a>1.1 引入依赖</h2> <pre><code>!--Excel导出依赖 --&gt; &lt;dependency&gt;     &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;     &lt;artifactId&gt;poi&lt;/artifactId&gt;     &lt;version&gt;3.17&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt;     &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;     &lt;artifactId&gt;poi-ooxml-schemas&lt;/artifactId&gt;     &lt;version&gt;3.17&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt;     &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;     &lt;artifactId&gt;poi-ooxml&lt;/artifactId&gt;     &lt;version&gt;3.17&lt;/version&gt; &lt;/dependency&gt; </code></pre> <h2> <a id="12_service_21" rel="nofollow"></a>1.2 service类</h2> <pre><code>/**  * 生成Excel  *  * @param operateRecords  */ public int generateTable(List&lt;OperateRecord&gt; operateRecords, String path) {     XSSFWorkbook wb = new XSSFWorkbook();     Sheet sheet = wb.createSheet("sheet1");     for (int i = 0; i &lt; 9; i++) {         sheet.setColumnWidth(i, 4300);     }      // 标题样式 样式     XSSFFont titleFont = wb.createFont();     titleFont.setFontHeight(24);     titleFont.setBold(true);     CellStyle titleCellStyle = this.getCellStyle(wb);     titleCellStyle.setFont(titleFont);     titleCellStyle.setFillBackgroundColor((short) 1);     //主 标题 在这里插入主标题     Row titleRow;     Cell titleCell;     sheet.addMergedRegion(new CellRangeAddress((short) 0, (short) 2, (short) 0, (short) 7));     for (int i = 0; i &lt;= 2; i++) {         titleRow = sheet.createRow(i);         for (int j = 0; j &lt; 8; j++) {             titleCell = titleRow.createCell(j);             titleCell.setCellType(CellType.STRING);             titleCell.setCellStyle(titleCellStyle);             titleCell.setCellValue("操作记录表");         }     }     //列 标题 在这里插入标题     Row rowLabel;     Cell cellLabel;     rowLabel = sheet.createRow(3);     for (int j = 0; j &lt; tableHeaders.size(); j++) {         cellLabel = rowLabel.createCell(j);         XSSFFont rowsTitleFont = wb.createFont();         rowsTitleFont.setBold(true);         CellStyle rowsTitleCellStyle = this.getCellStyle(wb);         rowsTitleCellStyle.setFont(rowsTitleFont);         cellLabel.setCellType(CellType.STRING);         cellLabel.setCellStyle(rowsTitleCellStyle);         cellLabel.setCellValue(tableHeaders.get(j));     }     //列 数据 在这里插入数据     Row rowCheck;     Cell cellCheck;     int rows = 4;     for (OperateRecord operateRecord : operateRecords) {         int column = 0;         rowCheck = sheet.createRow((rows++));         cellCheck = rowCheck.createCell(column++);         cellCheck.setCellType(CellType.STRING);         cellCheck.setCellStyle(this.getCellStyle(wb));         cellCheck.setCellValue(operateRecord.getId());         this.setCellCheck(cellCheck, rowCheck, this.getCellStyle(wb), column++).setCellValue(format.format(operateRecord.getRecordTime()));         this.setCellCheck(cellCheck, rowCheck, this.getCellStyle(wb), column++).setCellValue(operateRecord.getUsername());         this.setCellCheck(cellCheck, rowCheck, this.getCellStyle(wb), column++).setCellValue(operateRecord.getRequestIp());         this.setCellCheck(cellCheck, rowCheck, this.getCellStyle(wb), column++).setCellValue(operateRecord.getType());         this.setCellCheck(cellCheck, rowCheck, this.getCellStyle(wb), column++).setCellValue(operateRecord.getRequestMethod());         this.setCellCheck(cellCheck, rowCheck, this.getCellStyle(wb), column++).setCellValue(operateRecord.getRequestAnnotationName());         this.setCellCheck(cellCheck, rowCheck, this.getCellStyle(wb), column).setCellValue(operateRecord.getExceptionMsg());     }     if (!path.endsWith("/")) {         path = path + "/";     }     String filePath = path + format.format(new Date()).subSequence(0, 10) + "操作记录.xlsx";     return this.downloadFile(filePath, wb); }  /**  * 设置单元格样式  */ private Cell setCellCheck(Cell cellCheck, Row rowCheck, CellStyle cellStyle, int column) {     cellCheck = rowCheck.createCell(column);     cellCheck.setCellType(CellType.STRING);     cellCheck.setCellStyle(cellStyle);     return cellCheck; }  /**  * 设置样式  *  * @param wb  * @return  */ private CellStyle getCellStyle(XSSFWorkbook wb) {     CellStyle cellStyle = wb.createCellStyle();     cellStyle.setBorderTop(BorderStyle.THIN);     cellStyle.setBorderBottom(BorderStyle.THIN);     cellStyle.setBorderLeft(BorderStyle.THIN);     cellStyle.setBorderRight(BorderStyle.THIN);     cellStyle.setTopBorderColor(HSSFColor.BLACK.index);     cellStyle.setBottomBorderColor(HSSFColor.BLACK.index);     cellStyle.setLeftBorderColor(HSSFColor.BLACK.index);     cellStyle.setRightBorderColor(HSSFColor.BLACK.index);     cellStyle.setAlignment(HSSFCellStyle.ALIGN_CENTER); // 水平居中     cellStyle.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER); // 上下居中     return cellStyle; }  /**  * 下载电子表格  *  * @param path  * @return  */ private int downloadFile(String path, XSSFWorkbook wb) {     try {         File file = new File(path);         FileOutputStream fileOutputStream = new FileOutputStream(file);         wb.write(fileOutputStream);         fileOutputStream.close();         wb.close();         return 1;     } catch (Exception e) {         e.printStackTrace();         return 0;     } }  </code></pre> <h2> <a id="12_Controller_147" rel="nofollow"></a>1.2 Controller类</h2> <pre><code>/**  * 数据导出  *  * @param operateRecords 需要导入的数据  * @param path           文件存储的路径  * @return  */ @PostMapping("/generateTable") public Result generateTable(@RequestBody List&lt;OperateRecord&gt; operateRecords, @RequestParam String path) {     int flag = operateRecordService.generateTable(operateRecords, path);     if (flag &lt;= 0) {         return new Result(false, StatusCode.GENERATE_FAIL);     }     return new Result(true, StatusCode.OK); } </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-58153.htm">宠物园的宠物（宠物园宠物园）</a></p>
+                                        <p>下一个：<a href="/news/article-58804.htm">sql server排查死锁优化性能_MsSql_</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-31-free-subscribe-node.htm" title="1月31日→22.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月31日→22.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-34703.htm" title="动物医院大众点评怎么写文案吸引人（动物医院上班）">动物医院大众点评怎么写文案吸引人（动物医院上班）</a></li>
+                        <li class="py-2"><a href="/news/article-42558.htm" title="动物疫苗可以带上高铁吗现在多少钱一只（动物疫苗能放冰箱吗）">动物疫苗可以带上高铁吗现在多少钱一只（动物疫苗能放冰箱吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-mihomo-node-share.htm" title="1月25日→21.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月25日→21.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-free-subscribe-node.htm" title="11月27日→20.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址">11月27日→20.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21598.htm" title="学兽医去哪里学比较好211（学兽医在哪个学校比较好）">学兽医去哪里学比较好211（学兽医在哪个学校比较好）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-24-mihomo-windows.htm" title="1月24日→18.5M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月24日→18.5M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-29-free-node-subscribe.htm" title="12月29日→21.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月29日→21.4M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-26676.htm" title="动物疫苗多少钱一只啊图片视频（动物疫苗价格查询）">动物疫苗多少钱一只啊图片视频（动物疫苗价格查询）</a></li>
+                        <li class="py-2"><a href="/news/article-18857.htm" title="宠物医院猫咪打疫苗多少钱（宠物医院给猫打的疫苗是什么）">宠物医院猫咪打疫苗多少钱（宠物医院给猫打的疫苗是什么）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                                <p>
+                                    <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
