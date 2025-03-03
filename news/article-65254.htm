@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashmihomo.github.io/news/article-65254.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>springboot 使用 ActiveMQ</title>
+        <meta name="description" content="pom文件添加依赖 &lt;dependency&gt;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&lt;artifactId&gt" />
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Mihomo免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashmihomo.github.io/news/article-65254.htm" />
+    <meta property="og:site_name" content="Clash Mihomo免费机场订阅节点官网" />
+    <meta property="og:title" content="springboot 使用 ActiveMQ" />
+    <meta property="og:image" content="https://clashmihomo.github.io/uploads/20240920-1/48e9eb0a45c2581f778885edab30f47a.webp" />
+        <meta property="og:release_date" content="2025-03-01T06:59:40" />
+    <meta property="og:updated_time" content="2025-03-01T06:59:40" />
+        <meta property="og:description" content="pom文件添加依赖 &lt;dependency&gt;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&lt;artifactId&gt" />
+        
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="springboot 使用 ActiveMQ">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN7DJKT3D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZN7DJKT3D0');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>Clash Mihomo</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>springboot 使用 ActiveMQ</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>pom文件添加依赖</p> <pre><code class="prism language-java"><span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">&gt;</span></span><span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">&gt;</span></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span><span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">&gt;</span></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>activemq<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span><span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">&gt;</span></span><span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">&gt;</span></span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>activemq<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span><span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">&gt;</span></span>activemq<span class="token operator">-</span>pool<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span><span class="token generics"><span class="token punctuation">&lt;</span>version<span class="token punctuation">&gt;</span></span><span class="token number">5.17</span><span class="token number">.1</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span></code></pre> <p>配置 application.yml</p> <pre><code class="prism language-bash">server:   port:<span class="token number">8080</span><span class="token comment">#springBoot项目访问端口</span>   spring:   activemq:     broker-url: tcp://192.168.140.xx:30005<span class="token comment">#你activeMQ的ip和端口号</span>     user: admin<span class="token comment">#activeMq账号</span>     password: admin<span class="token comment">#activeMq密码</span>     pool:       enabled:<span class="token boolean">true</span><span class="token comment">#连接池启动</span>       max-connections:<span class="token number">10</span><span class="token comment">#最大连接数</span></code></pre> <p>SpringBoot 的启动类添加解 @EnableJms</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@SpringBootApplication</span><span class="token annotation punctuation">@EnableJms</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">MqconverterApplication</span><span class="token punctuation">{<!-- --></span><span class="token keyword">public</span><span class="token keyword">static</span><span class="token keyword">void</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">MqconverterApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>创建 activeMQ 配置类</p> <pre><code class="prism language-java">mport<span class="token class-name"><span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>activemq<span class="token punctuation">.</span></span>ActiveMQConnectionFactory</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>activemq<span class="token punctuation">.</span>command<span class="token punctuation">.</span></span><span class="token class-name">ActiveMQQueue</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Value</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Bean</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Configuration</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>jms<span class="token punctuation">.</span>config<span class="token punctuation">.</span></span><span class="token class-name">JmsListenerContainerFactory</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>jms<span class="token punctuation">.</span>config<span class="token punctuation">.</span></span><span class="token class-name">SimpleJmsListenerContainerFactory</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">javax<span class="token punctuation">.</span>jms<span class="token punctuation">.</span></span><span class="token class-name">ConnectionFactory</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">javax<span class="token punctuation">.</span>jms<span class="token punctuation">.</span></span><span class="token class-name">Queue</span><span class="token punctuation">;</span><span class="token comment">/**  * 配置类  */</span><span class="token annotation punctuation">@Configuration</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">ActiveMQConfig</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"${spring.activemq.broker-url}"</span><span class="token punctuation">)</span><span class="token keyword">private</span><span class="token class-name">String</span> brokerUrl<span class="token punctuation">;</span><span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"${spring.activemq.user}"</span><span class="token punctuation">)</span><span class="token keyword">private</span><span class="token class-name">String</span> userName<span class="token punctuation">;</span><span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"${spring.activemq.password}"</span><span class="token punctuation">)</span><span class="token keyword">private</span><span class="token class-name">String</span> password<span class="token punctuation">;</span><span class="token annotation punctuation">@Bean</span><span class="token keyword">public</span><span class="token class-name">ConnectionFactory</span><span class="token function">connectionFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">new</span><span class="token class-name">ActiveMQConnectionFactory</span><span class="token punctuation">(</span>userName<span class="token punctuation">,</span> password<span class="token punctuation">,</span> brokerUrl<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/**      * 在 Queue 模式中，对消息的监听需要对containerFactory进行配置      */</span><span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span><span class="token string">"queueListener"</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token class-name">JmsListenerContainerFactory</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span><span class="token function">queueJmsListenerContainerFactory</span><span class="token punctuation">(</span><span class="token class-name">ConnectionFactory</span> connectionFactory<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token class-name">SimpleJmsListenerContainerFactory</span> factory<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">SimpleJmsListenerContainerFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         factory<span class="token punctuation">.</span><span class="token function">setConnectionFactory</span><span class="token punctuation">(</span>connectionFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>         factory<span class="token punctuation">.</span><span class="token function">setPubSubDomain</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span> factory<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/**      * 在 topic 模式中，对消息的监听需要对containerFactory进行配置      */</span><span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span><span class="token string">"topicListener"</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token class-name">JmsListenerContainerFactory</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span><span class="token function">topicJmsListenerContainerFactory</span><span class="token punctuation">(</span><span class="token class-name">ConnectionFactory</span> connectionFactory<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token class-name">SimpleJmsListenerContainerFactory</span> factory<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">SimpleJmsListenerContainerFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         factory<span class="token punctuation">.</span><span class="token function">setConnectionFactory</span><span class="token punctuation">(</span>connectionFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>         factory<span class="token punctuation">.</span><span class="token function">setPubSubDomain</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span> factory<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <blockquote> <p>pubSubDomain：为true 代表 topic 模式，false 代表队列模式，默认是false</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221117/e1ca2120a7fac5b7d22142c62978eb15.jpg" alt="springboot 使用 ActiveMQ"></p> <p>生产者</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@RestController</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">ActiveMQProducerController</span><span class="token punctuation">{<!-- --></span><span class="token comment">/**      * 队列模式      * @param msg 消息      * @return      */</span><span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/queue/{msg}"</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token class-name">String</span><span class="token function">sendQueue</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">)</span><span class="token class-name">String</span> msg<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token class-name">ActiveMQQueue</span> queue<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">ActiveMQQueue</span><span class="token punctuation">(</span><span class="token string">"testq"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         jmsMessagingTemplate<span class="token punctuation">.</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span>queue<span class="token punctuation">,</span> msg<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span><span class="token string">"success"</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/**      * topic 模式      * @param msg 消息      * @return      */</span><span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/topic/{msg}"</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token class-name">String</span><span class="token function">sendTopic</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">)</span><span class="token class-name">String</span> msg<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token class-name">ActiveMQTopic</span> topic<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">ActiveMQTopic</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         jmsMessagingTemplate<span class="token punctuation">.</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span>topic<span class="token punctuation">,</span> msg<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span><span class="token string">"success"</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>消费者</p> <pre><code class="prism language-java"><span class="token keyword">import</span><span class="token namespace">com<span class="token punctuation">.</span>njc<span class="token punctuation">.</span>mqconverter<span class="token punctuation">.</span>property<span class="token punctuation">.</span></span><span class="token class-name">KafkaTopicProperty</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">lombok<span class="token punctuation">.</span>extern<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span></span><span class="token class-name">Slf4j</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Autowired</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>jms<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">JmsListener</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>kafka<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">KafkaTemplate</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span></span><span class="token class-name">Component</span><span class="token punctuation">;</span><span class="token annotation punctuation">@Component</span><span class="token annotation punctuation">@Slf4j</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">ActiveMQConsumer</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@Autowired</span><span class="token class-name">KafkaTemplate</span> kafkaTemplate<span class="token punctuation">;</span><span class="token comment">/**      * queue模式的消费者      */</span><span class="token annotation punctuation">@JmsListener</span><span class="token punctuation">(</span>destination<span class="token operator">=</span><span class="token string">"testq"</span><span class="token punctuation">,</span> containerFactory<span class="token operator">=</span><span class="token string">"queueListener"</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">readActiveQueue</span><span class="token punctuation">(</span><span class="token class-name">String</span> message<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token class-name">String</span> topic<span class="token operator">=</span><span class="token class-name">KafkaTopicProperty</span><span class="token punctuation">.</span><span class="token function">getSap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         kafkaTemplate<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>topic<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"activeMQ 消费者接收：{}"</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/**      * topic 模式的消费者      */</span><span class="token annotation punctuation">@JmsListener</span><span class="token punctuation">(</span>destination<span class="token operator">=</span><span class="token string">"test"</span><span class="token punctuation">,</span> containerFactory<span class="token operator">=</span><span class="token string">"topicListener"</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">readActivTopic1</span><span class="token punctuation">(</span><span class="token class-name">String</span> message<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"activeMQ topic 消费者1接收：{}"</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/**      * topic 模式的消费者      */</span><span class="token annotation punctuation">@JmsListener</span><span class="token punctuation">(</span>destination<span class="token operator">=</span><span class="token string">"test"</span><span class="token punctuation">,</span> containerFactory<span class="token operator">=</span><span class="token string">"topicListener"</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">readActivTopic2</span><span class="token punctuation">(</span><span class="token class-name">String</span> message<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"activeMQ topic 消费者2接收：{}"</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <blockquote> <p>监听者的队列模式可以不配 containerFactory ，但topic的需要配置</p> </blockquote> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-64634.htm">被家猫咬了一个小孔就一丁点血,然后早上伤口已经愈合（被猫咬出一个小伤口流血了）</a></p>
+                                        <p>下一个：<a href="/news/article-65255.htm">动物疫苗周期多久一次最好（动物疫苗一般什么时候是旺季）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-latest-mihomo-node.htm" title="12月12日→21.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址">12月12日→21.9M/S|2024年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-46016.htm" title="动物医疗机构的主管部门（动物医疗机构的主管部门是哪里）">动物医疗机构的主管部门（动物医疗机构的主管部门是哪里）</a></li>
+                        <li class="py-2"><a href="/news/article-64019.htm" title="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel">Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel</a></li>
+                        <li class="py-2"><a href="/news/article-53713.htm" title="开宠物粮食店 开宠物粮食店要多少钱">开宠物粮食店 开宠物粮食店要多少钱</a></li>
+                        <li class="py-2"><a href="/news/article-58803.htm" title="springboot数据导出">springboot数据导出</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-mihomo-node.htm" title="1月12日→21.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月12日→21.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-52109.htm" title="瑞派宠物医院跟瑞鹏是不是一家的（瑞派宠物和瑞鹏）">瑞派宠物医院跟瑞鹏是不是一家的（瑞派宠物和瑞鹏）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-2-free-subscribe-node.htm" title="1月2日→19.3M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月2日→19.3M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-48973.htm" title="动物接种疫苗后产生的免疫称为 动物接种疫苗后产生的免疫称为什么">动物接种疫苗后产生的免疫称为 动物接种疫苗后产生的免疫称为什么</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-20-free-subscribe-node.htm" title="2月20日→20.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址">2月20日→20.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                                <p>
+                                    <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
