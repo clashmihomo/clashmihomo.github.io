@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashmihomo.github.io/news/article-69066.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innoDB如何解决幻读详解</title>
+        <meta name="description" content="前天有个去快手面试的小伙伴私信我，他遇到了这样一个问题： “InnoDB如何解决幻读”？ 这个问题确实不是很好回答，在实际应用中，很多同学几乎都不关注数据库的事务隔离性。 所有问题基本就是CRUD，一" />
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Mihomo免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashmihomo.github.io/news/article-69066.htm" />
+    <meta property="og:site_name" content="Clash Mihomo免费机场订阅节点官网" />
+    <meta property="og:title" content="innoDB如何解决幻读详解" />
+    <meta property="og:image" content="https://clashmihomo.github.io/uploads/20240920-1/93ab6bd14d9c3942e768887175668d13.webp" />
+        <meta property="og:release_date" content="2025-03-07T06:35:55" />
+    <meta property="og:updated_time" content="2025-03-07T06:35:55" />
+        <meta property="og:description" content="前天有个去快手面试的小伙伴私信我，他遇到了这样一个问题： “InnoDB如何解决幻读”？ 这个问题确实不是很好回答，在实际应用中，很多同学几乎都不关注数据库的事务隔离性。 所有问题基本就是CRUD，一" />
+        
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="innoDB如何解决幻读详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN7DJKT3D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZN7DJKT3D0');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>Clash Mihomo</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>innoDB如何解决幻读详解</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<blockquote> <p>前天有个去快手面试的小伙伴私信我，他遇到了这样一个问题： “InnoDB如何解决幻读”？</p> <p>这个问题确实不是很好回答，在实际应用中，很多同学几乎都不关注数据库的事务隔离性。</p> <p>所有问题基本就是CRUD，一把梭~</p> <p>那么今天，我们来看一下 关于“InnoDB如何解决幻读”这个问题，普通人和高手的回答！</p> </blockquote> <p><strong>普通人：</strong></p> <p>嗯，我印象中，幻读是通过MVCC机制来解决的，嗯....</p> <p>MVCC类似于一种乐观锁的机制，通过版本的方式来区分不同的并发事务，避免幻读问题！</p> <p><strong>高手：</strong></p> <p>我会从三个方面来回答：</p> <p>1、 Mysql的事务隔离级别</p> <p>Mysql有四种事务隔离级别，这四种隔离级别代表当存在多个事务并发冲突时，可能出现的脏读、不可重复读、幻读的问题。</p> <p>其中InnoDB在RR的隔离级别下，解决了幻读的问题。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/99e70dc24f013b583987f314be9f8221.jpg" alt="innoDB如何解决幻读详解"></p> <p>2、 什么是幻读？</p> <p>那么， 什么是幻读呢？</p> <p>幻读是指在同一个事务中，前后两次查询相同的范围时，得到的结果不一致</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/fe759bc44f4bb03cd9dba55fd73effc0.jpg" alt="innoDB如何解决幻读详解"></p> <ul> <li>第一个事务里面我们执行了一个范围查询，这个时候满足条件的数据只有一条</li> <li>第二个事务里面，它插入了一行数据，并且提交了</li> <li>接着第一个事务再去查询的时候，得到的结果比第一次查询的结果多出来了一条数据。</li> </ul> <p>所以，幻读会带来数据一致性问题。</p> <p>3、 InnoDB如何解决幻读的问题</p> <p>InnoDB引入了间隙锁和next-key Lock机制来解决幻读问题，为了更清晰的说明这两种锁，我举一个例子：</p> <p>假设现在存在这样一个B+ Tree的索引结构，这个结构中有四个索引元素分别是：1、4、7、10。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/106a7a04358493299494552b1c61c5bf.jpg" alt="innoDB如何解决幻读详解"></p> <p>当我们通过主键索引查询一条记录，并且对这条记录通过for update加锁。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/bc502996d000426ecb7fb9f65d4152d2.jpg" alt="innoDB如何解决幻读详解"></p> <p>这个时候，会产生一个记录锁，也就是行锁，锁定id=1这个索引。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/55da1fe75dc1b791425b91c2003b813a.jpg" alt="innoDB如何解决幻读详解"></p> <p>被锁定的记录在锁释放之前，其他事务无法对这条记录做任何操作。</p> <p>前面我说过对幻读的定义： 幻读是指在同一个事务中，前后两次查询相同的范围时，得到的结果不一致！</p> <p>注意，这里强调的是范围查询，</p> <p>也就是说，InnoDB引擎要解决幻读问题，必须要保证一个点，就是如果一个事务通过这样一条语句进行锁定时。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/c1a84f99c939f728c0c7435c2d6ec846.jpg" alt="innoDB如何解决幻读详解"></p> <p>另外一个事务再执行这样一条insert语句，需要被阻塞，直到前面获得锁的事务释放。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7a2d7eab839fbe98a69052b4c6d61657.jpg" alt="innoDB如何解决幻读详解"></p> <p>所以，在InnoDB中设计了一种间隙锁，它的主要功能是锁定一段范围内的索引记录</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/69ec685283ba9e74e4c70a86e1ecb316.jpg" alt="innoDB如何解决幻读详解"></p> <p>当对查询范围id&gt;4 and id &lt;7加锁的时候，会针对B+树中（4，7）这个开区间范围的索引加间隙锁。</p> <p>意味着在这种情况下，其他事务对这个区间的数据进行插入、更新、删除都会被锁住。</p> <p>但是，还有另外一种情况，比如像这样</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/ad22ea746d976b29271e9095f128be50.jpg" alt="innoDB如何解决幻读详解"></p> <p>这条查询语句是针对id&gt;4这个条件加锁，那么它需要锁定多个索引区间，所以在这种情况下InnoDB引入了next-key Lock机制。</p> <p>next-key Lock相当于间隙锁和记录锁的合集，记录锁锁定存在的记录行，间隙锁锁住记录行之间的间隙，而next-key Lock锁住的是两者之和。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/3d27d2f93ed06f2acaf99f3fa3bae82e.jpg" alt="innoDB如何解决幻读详解"></p> <p>每个数据行上的非唯一索引列上都会存在一把next-key lock，当某个事务持有该数据行的next-key lock时，会锁住一段左开右闭区间的数据。</p> <p>因此，当通过id&gt;4这样一种范围查询加锁时，会加next-key Lock，锁定的区间范围是：(4, 7] , (7,10],(10,+∞]</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/72f766a705011652cfdac2d6248e3619.jpg" alt="innoDB如何解决幻读详解"></p> <p>间隙锁和next-key Lock的区别在于加锁的范围，间隙锁只锁定两个索引之间的引用间隙，而next-key Lock会锁定多个索引区间，它包含记录锁和间隙锁。</p> <p>当我们使用了范围查询，不仅仅命中了Record记录，还包含了Gap间隙，在这种情况下我们使用的就是临键锁，它是MySQL里面默认的行锁算法。</p> <p>4 、总结</p> <p>虽然InnoDB中通过间隙锁的方式解决了幻读问题，但是加锁之后一定会影响到并发性能，因此，如果对性能要求较高的业务场景中，可以把隔离级别设置成RC，这个级别中不存在间隙锁。</p> <p>以上就是我对于innoDB如何解决幻读问题的理解！</p> <p><strong>总结：</strong></p> <p>通过这个面试题可以发现，大厂面试对于基本功的考察还是比较严格的。</p> <p>不过，不管是为了应付面试，还是为以后的职业规划做铺垫， 技术能力的高低都是你在这个行业的核心竞争力。</p> <p>我是Mic，一个工作了14年的Java程序员，咱们下篇文章再见。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-68429.htm">杨幂三生三世演员表全部名单（三生三世十里桃花演员表）不看后悔，</a></p>
+                                        <p>下一个：<a href="/news/article-69067.htm">一只猫多少钱最便宜（一只家猫多少钱）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-54795.htm" title="如何使用Copy-Item在PowerShell中复制多个文件？">如何使用Copy-Item在PowerShell中复制多个文件？</a></li>
+                        <li class="py-2"><a href="/news/article-57016.htm" title="Arrays.asList存在的坑">Arrays.asList存在的坑</a></li>
+                        <li class="py-2"><a href="/news/article-38585.htm" title="动物接种疫苗后多久产生特异性抗体?（动物疫苗间隔多久打一次）">动物接种疫苗后多久产生特异性抗体?（动物疫苗间隔多久打一次）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-mihomo-windows.htm" title="3月8日→21.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址">3月8日→21.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-31-free-subscribe-node.htm" title="1月31日→22.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月31日→22.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-64020.htm" title="58同城宠物领养深圳（深圳宠物狗领养贴吧）">58同城宠物领养深圳（深圳宠物狗领养贴吧）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-1-mihomo-node-share.htm" title="3月1日→21.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址">3月1日→21.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-49488.htm" title="动物疫苗法律法规有哪些规定 动物疫苗法律法规有哪些规定要求">动物疫苗法律法规有哪些规定 动物疫苗法律法规有哪些规定要求</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-23-today-mihomo-node.htm" title="1月23日→21M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月23日→21M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-12-node-share.htm" title="2月12日→20.5M/S|2025年最新免费节点Clash Mihomo订阅链接地址">2月12日→20.5M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                                <p>
+                                    <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

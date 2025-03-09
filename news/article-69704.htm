@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashmihomo.github.io/news/article-69704.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vuex状态管理-mapState的基本用法详细介绍</title>
+        <meta name="description" content="Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化  // store.js/* vuex的核心" />
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Mihomo免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashmihomo.github.io/news/article-69704.htm" />
+    <meta property="og:site_name" content="Clash Mihomo免费机场订阅节点官网" />
+    <meta property="og:title" content="Vuex状态管理-mapState的基本用法详细介绍" />
+    <meta property="og:image" content="https://clashmihomo.github.io/uploads/20240920-1/6c74bef034a3ec0eaac25a4fe84ebbd3.webp" />
+        <meta property="og:release_date" content="2025-03-08T05:06:28" />
+    <meta property="og:updated_time" content="2025-03-08T05:06:28" />
+        <meta property="og:description" content="Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化  // store.js/* vuex的核心" />
+        
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vuex状态管理-mapState的基本用法详细介绍">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN7DJKT3D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZN7DJKT3D0');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>Clash Mihomo</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>Vuex状态管理-mapState的基本用法详细介绍</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night-eighties"> </h1> <ul> <li>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化</li> </ul> <pre><code class="prism language-js"><span class="token comment">// store.js</span><span class="token comment">/* vuex的核心管理对象模块:store  */</span><span class="token keyword">import</span> Vue<span class="token keyword">from</span><span class="token string">'vue'</span><span class="token keyword">import</span> Vuex<span class="token keyword">from</span><span class="token string">'vuex'</span>  Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vuex<span class="token punctuation">)</span><span class="token comment">// 状态对象</span><span class="token keyword">const</span> state<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 初始化状态 这里放置的状态可以被多个组件共享</span>   count<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span>   name<span class="token punctuation">:</span><span class="token string">'daming'</span><span class="token punctuation">}</span><span class="token keyword">const</span> mutations<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token keyword">const</span> action<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token keyword">const</span> getters<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token keyword">export</span><span class="token keyword">default</span><span class="token keyword">new</span><span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>   state<span class="token punctuation">,</span><span class="token comment">// 状态</span>   mutations<span class="token punctuation">,</span><span class="token comment">// 包含多个更新state函数的对象</span>   actions<span class="token punctuation">,</span><span class="token comment">// 包含多个队形事件回调函数的对象</span>   getters<span class="token comment">// 包含多个getter计算属性函数的对象</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre> <pre><code class="prism language-js"><span class="token comment">// main.js</span><span class="token comment">/* 入口JS  */</span><span class="token keyword">import</span> Vue<span class="token keyword">from</span><span class="token string">'vue'</span><span class="token keyword">import</span> App<span class="token keyword">from</span><span class="token string">'./App.vue'</span><span class="token keyword">import</span> store<span class="token keyword">from</span><span class="token string">'./store'</span><span class="token comment">// 创建vm</span><span class="token comment">/* eslint-disable no-new */</span><span class="token keyword">new</span><span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>   el<span class="token punctuation">:</span><span class="token string">'#app'</span><span class="token punctuation">,</span>   components<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>App<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token comment">// 映射组件标签</span>   template<span class="token punctuation">:</span><span class="token string">'&lt;App/&gt;'</span><span class="token punctuation">,</span><span class="token comment">// 指定需要渲染到页面的模板</span>   store<span class="token comment">// 所有的组件对象都多了一个属性:$store</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre> </h1> <p>虽然将所有的状态放入Vuex，会使状态变化更显式和易调试，但也会使代码变得冗长和不直观。如果有些状态严格属于单个组件，最好还是作为组件的局部状态，比如temp变量,tempcount,tempcount2作为组件的局部状态。</p> <pre><code class="prism language-html"><span class="token comment">&lt;!-- App.vue --&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>example<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>     {<!-- -->{count}}     {<!-- -->{name}}     {<!-- -->{nameAlias}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span> mapState<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'vuex'</span><span class="token comment">// 引入mapState</span><span class="token keyword">export</span><span class="token keyword">default</span><span class="token punctuation">{<!-- --></span><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 使用 Vuex 并不意味着你需要将所有的状态放入 Vuex。虽然将所有的状态放到 Vuex 会使状态变化更显式和易调试，但也会使代码变得冗长和不直观。</span><span class="token comment">// 如果有些状态严格属于单个组件，最好还是作为组件的局部状态。你应该根据你的应用开发需要进行权衡和确定。</span><span class="token comment">// 下面的temp变量,tempcount,tempcount2作为组件的局部状态</span>       temp<span class="token punctuation">:</span><span class="token string">'hello'</span><span class="token punctuation">,</span>       tempcount<span class="token punctuation">:</span><span class="token number">1</span>，       tempcount2<span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span>   computed<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span><span class="token comment">// tempCountPlusTempCount2 这个计算属性并没有涉及到vuex管理的状态</span><span class="token function">tempCountPlusTempCount2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount<span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount2<span class="token punctuation">}</span><span class="token comment">// 由于 Vuex 的状态存储是响应式的，所以可以使用计算属性来获得某个状态</span><span class="token comment">// 当状态改变时，都会重新求取计算属性，并且触发更新相关联的 DOM</span><span class="token comment">// 通过下面的计算属性，就可以在当前组件中访问到count,name,nameAlias等了 在模板中我们通过大括号符号打印出来</span><span class="token comment">// 下面的计算属性涉及到了vuex管理的状态</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 这实际上是ES6中对象的简化写法 完整写法是 count: function { return this.$store.state.count }</span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>age<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 这实际上是ES6中对象的简化写法 完整写法是 name: function { return this.$store.state.age }</span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>age<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">nameAlias</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>name<span class="token punctuation">}</span>       countplustempcount<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount<span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">countplustempcount2</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount2<span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token comment">// 但有一个问题</span><span class="token comment">// 当一个组件需要获取多个状态的时候，将这些状态都声明为计算属性会有些重复和冗余。比如上面的name(),count(),nameAlias(),显得重复，代码冗长</span><span class="token comment">// 为了解决这个问题，我们可以使用 mapState 辅助函数帮助我们生成计算属性，让你少按几次键：</span><span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre> <p>但有一个问题，当一个组件需要获取多个状态的时候，将这些状态都声明为计算属性会有些重复和冗余。比如上面的name(),count(),nameAlias(),显得重复，代码冗长。为了解决这个问题，我们可以使用 mapState 辅助函数帮助我们生成计算属性，让你少按几次键</p> </h1> <p>mapState函数的可以接受一个对象Object&lt;string | function&gt;。对象中可以包含字符串或函数。mapState()函数的返回结果是一个对象。</p> <pre><code class="prism language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>example<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>     {<!-- -->{count}}     {<!-- -->{name}}     {<!-- -->{nameAlias}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span> mapState<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'vuex'</span><span class="token keyword">export</span><span class="token keyword">default</span><span class="token punctuation">{<!-- --></span><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token punctuation">{<!-- --></span>       temp<span class="token punctuation">:</span><span class="token string">'hello'</span><span class="token punctuation">,</span>       tempcount<span class="token punctuation">:</span><span class="token number">1</span>，       tempcount2<span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span>   computed<span class="token punctuation">:</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>     count<span class="token punctuation">:</span><span class="token string">'count'</span><span class="token punctuation">,</span><span class="token comment">// string    映射 this.count 为 store.state.count的值</span><span class="token comment">// 箭头函数可使代码更简练</span>     name<span class="token punctuation">:</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>name<span class="token punctuation">,</span><span class="token comment">// function   映射 this.name 为 store.state.name的值</span>     nameAlias<span class="token punctuation">:</span><span class="token string">'name'</span><span class="token punctuation">,</span><span class="token comment">// string   映射 this.nameAlias 为 store.state.name的值</span>     countplustempcount<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 用普通函数this指向vue实例,但是在箭头函数中this就不是指向vue实例了，所以这里必须用普通哈数</span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount<span class="token operator">+</span> state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">countplustempcount2</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount2<span class="token operator">+</span> state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre> <ul> <li>我们继续看上面的mapState函数</li> </ul> <pre><code class="prism language-js">computed<span class="token punctuation">:</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>     count<span class="token punctuation">:</span><span class="token string">'count'</span><span class="token punctuation">,</span><span class="token comment">// string    映射 this.count 为 store.state.count的值</span><span class="token comment">// 箭头函数可使代码更简练</span>     name<span class="token punctuation">:</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>name<span class="token punctuation">,</span><span class="token comment">// function   映射 this.name 为 store.state.name的值</span>     nameAlias<span class="token punctuation">:</span><span class="token string">'name'</span><span class="token punctuation">,</span><span class="token comment">// string   映射 this.nameAlias 为 store.state.name的值</span>     countplustempcount<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 用普通函数this指向vue实例,但是在箭头函数中this就不是指向vue实例了，所以这里必须用普通哈数</span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount<span class="token operator">+</span> state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">countplustempcount2</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount2<span class="token operator">+</span> state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre> <ul> <li>上面mapState()函数接收了一个对象。</li> </ul> <p>对象的第一个属性是string类型的，<code>count: 'count'</code>, 这条语句映射出了this.count， 值等于store.state.count的值。</p> <p>对象的第二个属性是一个箭头函数，<code>name: (state) =&gt; state.name,</code>，映射 this.name 为 store.state.name的值。</p> <p>对象的第三个属性是一个string类型，<code>nameAlias: 'name'</code>，映射 this.nameAlias 为 store.state.name的值， 和第一个属性的用法本质是一致的，不过这里映射出的计算属性的名称与 state 的子节点名称不同。</p> <p>对象的第四个属性是一个普通函数，普通函数和箭头函数的不同之处在于，普通函数中的this指向了vue实例，因为可以访问到当前组件的局部状态，比如this.tempcount。</p> <p>对象的第五个属性是一个普通函数，第五个和第四个的用法本质是一样的，只不过第五个用了ES6中对象的简化写法。</p> <ul> <li>上面的mapState函数的返回值是一个对象，我们可以看作是这样的</li> </ul> <pre><code class="prism language-js">computed<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 这个对象就是mapState的返回值</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token function">nameAlias</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>name<span class="token punctuation">}</span>     countplustempcount<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount<span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">countplustempcount2</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount2<span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>把这个对象赋值给computed不就和原始的写法一样了吗，所以mapState起到了简化的作用。但是我们可以发现比起直接给computed赋值，这里少了tempCountPlusTempCount2这个计算属性。tempCountPlusTempCount2不是有vuex状态计算而来的，是根据组件内的局部状态计算来的。</p> </h1> <p>对象的扩展运算符（<code>...</code>）用于取出参数对象的所有可遍历属性，拷贝到当前对象之中。为什么要用扩展运算符呢，我们观察到上面直接将mapState函数的返回值赋给computed对象的话，那么computed中就只有对vuex状态的获取，而没有了当前组件的局部状态，比如tempCountPlusTempCount2就没地方放了，所以我们用扩展运算符。</p> <pre><code class="prism language-js"><span class="token keyword">let</span> z<span class="token operator">=</span><span class="token punctuation">{<!-- --></span> a<span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token keyword">let</span> n<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token operator">...</span>z<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment">// 对象的扩展运算符（...）用于取出参数对象的所有可遍历属性，拷贝到当前对象之中</span> n<span class="token comment">// { a: 3, b: 4 }</span></code></pre> <p>所以利用扩展运算符将下面mapState函数的返回值对象</p> <pre><code class="prism language-js">computed<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span><span class="token operator">...</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>         count<span class="token punctuation">:</span><span class="token string">'count'</span><span class="token punctuation">,</span><span class="token comment">// string    映射 this.count 为 store.state.count的值</span><span class="token comment">// 箭头函数可使代码更简练</span>         name<span class="token punctuation">:</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>name<span class="token punctuation">,</span><span class="token comment">// function   映射 this.name 为 store.state.name的值</span>         nameAlias<span class="token punctuation">:</span><span class="token string">'name'</span><span class="token punctuation">,</span><span class="token comment">// string   映射 this.nameAlias 为 store.state.name的值</span>         countplustempcount<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 用普通函数this指向vue实例,但是在箭头函数中this就不是指向vue实例了，所以这里必须用普通哈数</span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount<span class="token operator">+</span> state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">countplustempcount2</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount2<span class="token operator">+</span> state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre> <p>上面的结果</p> <pre><code class="prism language-js">computed<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token function">nameAlias</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>name<span class="token punctuation">}</span>     countplustempcount<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount<span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">countplustempcount2</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount2<span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>于是可以将组将内的计算属性和获取vuex状态的计算属性写在一起了。</p> <pre><code class="prism language-js">computed<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span><span class="token function">tempCountPlusTempCount2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount<span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount2<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token operator">...</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>         count<span class="token punctuation">:</span><span class="token string">'count'</span><span class="token punctuation">,</span><span class="token comment">// string    映射 this.count 为 store.state.count的值</span><span class="token comment">// 箭头函数可使代码更简练</span>         name<span class="token punctuation">:</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>name<span class="token punctuation">,</span><span class="token comment">// function   映射 this.name 为 store.state.name的值</span>         nameAlias<span class="token punctuation">:</span><span class="token string">'name'</span><span class="token punctuation">,</span><span class="token comment">// string   映射 this.nameAlias 为 store.state.name的值</span>         countplustempcount<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 用普通函数this指向vue实例,但是在箭头函数中this就不是指向vue实例了，所以这里必须用普通哈数</span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount<span class="token operator">+</span> state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">countplustempcount2</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount2<span class="token operator">+</span> state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre> <p>这就是mapState的基本用法。</p> </h1> <p>当映射的计算属性的名称与 state 的子节点名称相同时，我们也可以给<code>mapState</code> 传一个字符串数组。</p> <pre><code class="prism language-js">computed<span class="token punctuation">:</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token comment">// 映射 this.count 为 store.state.count</span><span class="token string">'count'</span><span class="token punctuation">,</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre> <p>上面的写法可以看作</p> <pre><code class="prism language-js">computed<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> </h1> <pre><code class="prism language-js">computed<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span><span class="token function">tempCountPlusTempCount2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount<span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount2<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token operator">...</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">,</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token operator">...</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>         nameAlias<span class="token punctuation">:</span><span class="token string">'name'</span><span class="token punctuation">,</span><span class="token comment">// string   映射 this.nameAlias 为 store.state.name的值</span>         countplustempcount<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 用普通函数this指向vue实例,但是在箭头函数中this就不是指向vue实例了，所以这里必须用普通哈数</span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount<span class="token operator">+</span> state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">countplustempcount2</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">this</span><span class="token punctuation">.</span>tempcount2<span class="token operator">+</span> state<span class="token punctuation">.</span>count<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-69067.htm">一只猫多少钱最便宜（一只家猫多少钱）</a></p>
+                                        <p>下一个：<a href="/news/article-69705.htm">动物疫病防控中心可以打疫苗吗多少钱（动物疾病预防控制中心可以打疫苗吗）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-63413.htm" title="动物疫苗分几类类型和区别（动物疫苗分几类类型和区别图片）">动物疫苗分几类类型和区别（动物疫苗分几类类型和区别图片）</a></li>
+                        <li class="py-2"><a href="/news/article-52640.htm" title="猫三联三针间隔多久打一次疫苗啊（猫三联三针间隔多久打一次疫苗啊多少钱）">猫三联三针间隔多久打一次疫苗啊（猫三联三针间隔多久打一次疫苗啊多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-48378.htm" title="上海出名的宠物医院排名（上海出名的宠物医院排名第一）">上海出名的宠物医院排名（上海出名的宠物医院排名第一）</a></li>
+                        <li class="py-2"><a href="/news/article-69066.htm" title="innoDB如何解决幻读详解">innoDB如何解决幻读详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-9-free-subscribe-node.htm" title="2月9日→21.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址">2月9日→21.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-58804.htm" title="sql server排查死锁优化性能_MsSql_">sql server排查死锁优化性能_MsSql_</a></li>
+                        <li class="py-2"><a href="/news/article-41053.htm" title="猫体外驱虫药多久能杀死跳蚤（做完驱虫三天了还有跳蚤）">猫体外驱虫药多久能杀死跳蚤（做完驱虫三天了还有跳蚤）</a></li>
+                        <li class="py-2"><a href="/news/article-46991.htm" title="动物疫苗生产车间 动物疫苗生产车间工作怎么样">动物疫苗生产车间 动物疫苗生产车间工作怎么样</a></li>
+                        <li class="py-2"><a href="/news/article-45546.htm" title="Shell基础 — 10、Bash中的特殊符号详解">Shell基础 — 10、Bash中的特殊符号详解</a></li>
+                        <li class="py-2"><a href="/news/article-38100.htm" title="全国兽药50强企业名单 全国兽药50强企业名单公告">全国兽药50强企业名单 全国兽药50强企业名单公告</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                                <p>
+                                    <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
