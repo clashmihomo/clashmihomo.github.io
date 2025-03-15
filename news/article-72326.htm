@@ -136,6 +136,7 @@
                   				  				  				<div id="content_views" class="htmledit_views"> <p>报错信息：</p> <pre><code class="language-bash">hdfs.util.HdfsError: Permission denied: user=dr.who, access=WRITE, inode="/user/hadoop/output":hadoop:supergroup:drwxr-xr-x</code></pre> <p>解决方法：</p> <p>因为权限的问题，需要修改配置文件和赋予权限：<br /> 1.赋予权限</p> <pre><code class="language-bash">hadoop fs -chmod 777 /user/hadoop</code></pre> <p>2.修改配置文件</p> <p>hdfs-site.xml</p> <pre><code class="language-bash">&lt;property&gt; &lt;name&gt;dfs.permissions.enabled&lt;/name&gt; &lt;value&gt;false&lt;/value&gt; &lt;/property&gt;</code></pre> <p>报错信息：</p> <pre><code class="language-bash">hdfs.util.HdfsError: Cannot create file/user/hadoop/output/result.txt. Name node is in safe mode.</code></pre> <p>解决方法：</p> <p>因为Name node处于安全模式，需要关闭安全模式</p> <pre><code class="language-bash">hadoop dfsadmin -safemode leave</code></pre> <p>报错信息：</p> <pre><code>requests.exceptions.ConnectionError: HTTPConnectionPool(host='ubuntu', port=50075): Max retries exceeded with url: /webhdfs/v1/user/hadoop/input/file1.txt?op=OPEN&amp;namenoderpcaddress=localhost:9000&amp;length=20&amp;offset=0 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x11c44f670&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known')) </code></pre> <p>解决方法：</p> <pre><code>问题原因 :出现host='16a187bf3b55', port=50075 表示客户端已经连接成功,但是无法解析域名  通过在python程序运行的机器上修改hosts文件  添加对应连接的ip 以及相关联的别名  如  119.10.1.15&nbsp; &nbsp; 16a187bf3b55&nbsp;&nbsp;namenode </code></pre> <p>&nbsp;</p> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-72325.htm">为什么在MySQL中使用两位数年份的日期值不是一个好习惯？</a></p>
+                                        <p>下一个：<a href="/news/article-72994.htm">猫三联一共几针,间隔多久打（猫三联一共几针,间隔多久打一次）</a></p>
                                     </div>
                                     </div>
                     <div class="col-md-3">
@@ -145,16 +146,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-2-9-free-subscribe-node.htm" title="2月9日→21.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址">2月9日→21.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-38584.htm" title="成都宠物托运价格表查询官网（成都宠物托运价格表查询官网）">成都宠物托运价格表查询官网（成都宠物托运价格表查询官网）</a></li>
-                        <li class="py-2"><a href="/news/article-37597.htm" title="Electron结合React和TypeScript进行开发">Electron结合React和TypeScript进行开发</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-2-26-free-mihomo-node.htm" title="2月26日→20.4M/S|2025年最新免费节点Clash Mihomo订阅链接地址">2月26日→20.4M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-45545.htm" title="PHP取消引用方法详解">PHP取消引用方法详解</a></li>
-                        <li class="py-2"><a href="/news/article-64634.htm" title="被家猫咬了一个小孔就一丁点血,然后早上伤口已经愈合（被猫咬出一个小伤口流血了）">被家猫咬了一个小孔就一丁点血,然后早上伤口已经愈合（被猫咬出一个小伤口流血了）</a></li>
-                        <li class="py-2"><a href="/news/article-47482.htm" title="@PathVariable接收两个参数">@PathVariable接收两个参数</a></li>
-                        <li class="py-2"><a href="/news/article-38585.htm" title="动物接种疫苗后多久产生特异性抗体?（动物疫苗间隔多久打一次）">动物接种疫苗后多久产生特异性抗体?（动物疫苗间隔多久打一次）</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-1-28-node-share.htm" title="1月28日→21.4M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月28日→21.4M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-70353.htm" title="宠物驱虫剂什么牌子好（宠物驱虫十大品牌）">宠物驱虫剂什么牌子好（宠物驱虫十大品牌）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-15-mihomo-github.htm" title="1月15日→21.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月15日→21.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-13-today-mihomo-node.htm" title="2月13日→20.8M/S|2025年最新免费节点Clash Mihomo订阅链接地址">2月13日→20.8M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-mihomo-github.htm" title="1月9日→20.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月9日→20.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-55361.htm" title="python提供了9个基本的数值运算操作符_Python学习笔记（三）Python基本数字类型及其简单操作（1）&#8230;">python提供了9个基本的数值运算操作符_Python学习笔记（三）Python基本数字类型及其简单操作（1）&#8230;</a></li>
+                        <li class="py-2"><a href="/news/article-41053.htm" title="猫体外驱虫药多久能杀死跳蚤（做完驱虫三天了还有跳蚤）">猫体外驱虫药多久能杀死跳蚤（做完驱虫三天了还有跳蚤）</a></li>
+                        <li class="py-2"><a href="/news/article-63413.htm" title="动物疫苗分几类类型和区别（动物疫苗分几类类型和区别图片）">动物疫苗分几类类型和区别（动物疫苗分几类类型和区别图片）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-free-node-subscribe.htm" title="1月22日→20.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月22日→20.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-mihomo-node.htm" title="1月12日→21.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址">1月12日→21.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-latest-mihomo-node.htm" title="3月6日→19.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址">3月6日→19.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -166,7 +167,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
