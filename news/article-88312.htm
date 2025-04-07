@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashmihomo.github.io/news/article-88312.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nacos配置管理基础应用</title>
+        <meta name="description" content="在Nacos控制太上，我们在配置管理中点击新建配置，需要我们输入Data ID、Group、配置内容等等。对于Nacos配置管理，它就是通过Namespace、group、Data ID能够定位到一个" />
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Mihomo免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashmihomo.github.io/news/article-88312.htm" />
+    <meta property="og:site_name" content="Clash Mihomo免费机场订阅节点官网" />
+    <meta property="og:title" content="Nacos配置管理基础应用" />
+    <meta property="og:image" content="https://clashmihomo.github.io/uploads/20240920-1/4a1c4ca639941995e403c2283edeee4f.webp" />
+        <meta property="og:release_date" content="2025-04-04T09:09:32" />
+    <meta property="og:updated_time" content="2025-04-04T09:09:32" />
+        <meta property="og:description" content="在Nacos控制太上，我们在配置管理中点击新建配置，需要我们输入Data ID、Group、配置内容等等。对于Nacos配置管理，它就是通过Namespace、group、Data ID能够定位到一个" />
+        
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Nacos配置管理基础应用">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN7DJKT3D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZN7DJKT3D0');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>Clash Mihomo</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>Nacos配置管理基础应用</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p>在Nacos控制太上，我们在配置管理中点击新建配置，需要我们输入Data ID、Group、配置内容等等。对于Nacos配置管理，它就是通过Namespace、group、Data ID能够定位到一个应用的配置集。</p> <p><img fetchpriority="high" decoding="async" alt="" height="746" src="http://img.555519.xyz/uploads3/20220901/73041a0ca99f3608afe8496bac8fefb0.jpg"></p> <hr/> <h2>Nacos配置管理的数据模型</h2> <p class="img-center"><img decoding="async" alt="" height="422" src="http://img.555519.xyz/uploads3/20220901/b057bb4db76f0894af186095b7979eeb.jpg"></p> <hr/> <h2>配置集(Data ID)</h2> <p><strong>在系统中，一个配置文件通常就是一个配置集，一个配置集可以包含了系统的各种配置信息。</strong></p> <p>例如，一个配置集可能包含了数据源、线程池、日志级别等配置项。</p> <p><strong>每个配置集都可以定义一个有意义的名称，就是配置集的ID即Data ID。</strong></p> <hr/> <h2>配置项</h2> <p><strong>配置集中包含的一个个配置内容就是配置项。它代表一个具体的可配置的参数与其值域，通常以 key=value 的形式存在。</strong></p> <p>例如我们常配置系统的日志输出级别（logLevel=INFO|WARN|ERROR） 就是一个配置项。</p> <hr/> <h2>配置分组(Group)</h2> <p>配置分组是对配置集进行分组，通过一个有意义的字符串（如 Buy 或 Trade ）来表示，不同的配置分组下可以有相同的配置集（Data ID）。</p> <p>当您在 Nacos 上创建一个配置时，如果未填写配置分组的名称，则配置分组的名称默认采用<strong>DEFAULT_GROUP</strong>。</p> <p><strong>配置分组的常见场景：可用于区分不同的项目或应用。</strong></p> <p>例如：学生管理系统的配置集，可以定义一个group为：STUDENT_GROUP。</p> <hr/> <h2>命名空间(Namespace)</h2> <p><strong>命名空间（namespace）可用于进行不同环境的配置隔离。</strong></p> <p>例如可以隔离开发环境、测试环境和生产环境，因为它们的配置可能各不相同，或者是隔离不同的用户，不同的开发人员使用同一个nacos管理各自的配置，可通过namespace隔离。</p> <p><strong>不同的命名空间下，可以存在相同名称的配置分组(Group) 或 配置集。</strong></p> <hr/> <h2>最佳实践</h2> <p>Nacos抽象定义了Namespace、Group、Data ID的概念，具体这几个概念代表什么，取决于我们把它们看成什么，这里推荐给大家一种用法，如下图：</p> <blockquote> <p><strong>Namespace ：代表不同环境，如开发、测试、生产环境。</strong></p> <p><strong>Group：代表某项目，如XX医疗项目、XX电商项目</strong></p> <p><strong>DataId：每个项目下往往有若干个工程，每个配置集(DataId)是一个工程的主配置文件</strong></p> </blockquote> <p><img decoding="async" alt="" height="287" src="http://img.555519.xyz/uploads3/20220901/701c7aa4496b2a92e69948447d493278.jpg"></p> <p><strong>获取某配置集需要指定：</strong></p> <ol> <li><strong>nacos服务地址，必须指定</strong></li> <li><strong>namespace，如不指定默认public</strong></li> <li><strong>group，如不指定默认 DEFAULT_GROUP</strong></li> <li><strong>dataId，必须指定</strong></li> </ol> <p>写个测试类，用于获取nacos控制台上创建的配置集：</p> <pre><code class="language-java">public class QueryRemoteConfigInfo { 	public static void main(String[] args) throws NacosException { 		String address = "127.0.0.1:8848"; 		String dataId = "nacos-simple-config.yaml"; 		// 命名空间：开发环境 		String namespace = "b21f780c-df9e-439c-9435-2367bb2f799b"; 		// 应用分组：默认 		String groupId = "DEFAULT_GROUP"; 		Properties properties = new Properties(); 		properties.put("serverAddr", address); 		ConfigService configService = NacosFactory.createConfigService(properties); 		String content = configService.getConfig(dataId, groupId, 5000); 		System.out.println(content); 	} }</code></pre> <p>上边测试类将从“127.0.0.1:8848”的nacos配置中心获取配置，通过以下信息定位配置集：</p> <blockquote> <p><strong>namespace:b21f780c-df9e-439c-9435-2367bb2f799b</strong></p> <p><strong>group:DEFAULT_GROUP</strong></p> <p><strong>Data id:nacos-simple-config.yaml</strong></p> </blockquote> <hr/> </h1> <h2>2.1&nbsp;命名空间的隔离设计</h2> <p>namespace 的设计是 nacos 基于此做多环境以及多租户（多个用户共同使用nacos）数据(配置和服务)隔离的。</p> <ul> <li>从一个租户 (用户)的角度来看，如果有多套不同的环境，那么这个时候可以根据指定的环境来创建不同的namespce，以此来实现多环境的隔离。</li> <li>例如，你可能有开发，测试和生产三个不同的环境，那么使用一套nacos 集群可以分别建以下三个不同的 namespace。如下图所示：</li> </ul> <p><img loading="lazy" decoding="async" alt="" height="372" src="http://img.555519.xyz/uploads3/20220901/c210d506b6cbc3620bc7fa631aae0b4b.jpg"></p> <ul> <li>从多个租户 (用户)的角度来看，每个租户(用户)可能会有自己的 namespace，每个租户(用户)的配置数据以及注册的服务数据都会归属到自己的 namespace 下，以此来实现多租户间的数据隔离。</li> <li>进入用户管理，我们创建三个租户，依次为：张三、李四、王五。</li> </ul> <p><img loading="lazy" decoding="async" alt="" height="458" src="http://img.555519.xyz/uploads3/20220901/639e3da55ff2ea2c662b6830e7d0ed37.jpg"></p> <ul> <li>分配好了之后，各租户用自己的账户名和密码登录后，创建自己的命名空间</li> </ul> <p><img loading="lazy" decoding="async" alt="" height="518" src="http://img.555519.xyz/uploads3/20220901/002dd7dd59e45483f51a204851db8915.jpg"></p> <ul> <li>在nacos控制台上，进入角色管理，将角色与用户绑定：</li> </ul> <p><img loading="lazy" decoding="async" alt="" height="477" src="http://img.555519.xyz/uploads3/20220901/770f13400614017af3c56d1cefe41511.jpg"></p> <ul> <li>进入权限管理，将角色与资源绑定：</li> </ul> <p><img loading="lazy" decoding="async" alt="" height="455" src="http://img.555519.xyz/uploads3/20220901/394d812eda2ccc5dd7f90bf73fa6ecf0.jpg"></p> <ul> <li>&nbsp;通过创建三个租户、命名空间、权限隔离，最终将形成如下图所示的隔离效果：</li> </ul> <p><img loading="lazy" decoding="async" alt="" height="482" src="http://img.555519.xyz/uploads3/20220901/4c38b2ff6924fe4289e2d7e8a7bec241.jpg"></p> <ul> <li>&nbsp;如下图所示，在不同租户下的命名空间里可以创建属于自己的配置列表。</li> </ul> <p><img loading="lazy" decoding="async" alt="" height="464" src="http://img.555519.xyz/uploads3/20220901/79d9742d12c0e934a5eb0c17a6753048.jpg"></p> <hr/> <h2>2.2 命名空间管理</h2> <p>命名空间(Namespace)是用于隔离多个环境的（如开发、测试、生产），而每个应用在不同环<br /> 境的同一个配置（如数据库数据源）的值是不一样的。因此，我们应针对企业项目实际研发流程、环境进行规划。</p> <p>我们现有开发、测试、生产三套环境，那么我们应该针对这三个环境分别建立三个namespace。</p> <p><img loading="lazy" decoding="async" alt="" height="608" src="http://img.555519.xyz/uploads3/20220901/7921e05876ddf757857ca4bbf163ff19.jpg"></p> <p>&nbsp;建立好三个命名空间后，在配置管理和服务列表下都会包含用于切换namespace的table按钮，如下图：<img loading="lazy" decoding="async" alt="" height="420" src="http://img.555519.xyz/uploads3/20220901/52e4c677e75b59aa48a8eda9f0d6b8ac.jpg"></p> <p>在编写程序获取配置集过程中没有感知到这个参数的输入，那么 nacos 统一会使用一个默认的 namespace作为输入，nacos config 会使用一个空字符串作为默认的参数来初始化，对应界面上就是public命名空间。</p> <blockquote> <p><strong>注意：</strong></p> <p><strong>命名空间public是nacos的一个保留空间，如果我们需要创建属于自己的namespace，则不要和public重名，以一个实际业务场景有具体语义的名字来命名，以免带来字面上不容易区分自己是哪一个namespace。</strong></p> <p><strong>其次，我们在项目开发中，如果需要指定namespace命名空间参数时，则一定要填写命名空间的ID，而不是名称。</strong></p> </blockquote> <p><strong>举个栗子：</strong></p> <p><img loading="lazy" decoding="async" alt="" height="338" src="http://img.555519.xyz/uploads3/20220901/d62b8a75fccc7c52a58e102f29abb069.jpg"></p> <hr/> </h1> <p>Nacos支持基于Namespace和Group的配置分组管理，以便用户更灵活的根据自己的需要按照环境或者应用、模块等分组管理微服务的大量配置，在配置管理中主要提供了配置历史版本、回滚、订阅者查询等核心管理能力。</p> <h2>3.1&nbsp;配置列表</h2> <p>点击Nacos控制台的配置管理-&gt;配置列表菜单，即可看到以下界面展示：</p> <p><img loading="lazy" decoding="async" alt="" height="472" src="http://img.555519.xyz/uploads3/20220901/60e54aceefe8097d6edcff120af56d60.jpg"></p> <p>&nbsp;界面中展示了不同namespace下的配置集列表，可点击左上角的不同namespace进行切换。<br /> 右上角“+"号或点击某配置集后的 编辑 按钮可进入配置集编辑器。</p> <ul> <li><strong>多配置格式编辑器</strong></li> </ul> <p>Nacos支持 YAML、Properties、TEXT、JSON、XML、HTML 等常见配置格式在线编辑、语法高亮、格式校验，帮助用户高效编辑的同时大幅降低格式错误带来的风险。</p> <p><img loading="lazy" decoding="async" alt="" height="571" src="http://img.555519.xyz/uploads3/20220901/59542ab9917a13228e5e157d7bf407c2.jpg"></p> <p>Nacos支持配置标签的能力，帮助用户更好、更灵活的做到基于标签的配置分类及管理。同时支持用户对配置及其变更进行描述，方面多人或者跨团队协作管理配置。</p> <ul> <li><strong>内容比较</strong></li> </ul> <p>Nacos的配置管理支持配置集内容比较能力，帮助我们校验修改的内容，降低改错带来的风险。</p> <p><img loading="lazy" decoding="async" alt="" height="818" src="http://img.555519.xyz/uploads3/20220901/d2682dac9d946362320b762ff366b48e.jpg"></p> <ul> <li><strong>&nbsp;导出</strong></li> </ul> <p><img loading="lazy" decoding="async" alt="" height="576" src="http://img.555519.xyz/uploads3/20220901/717894e7f71f5ec32539b623aa41dcb4.jpg"></p> <ul> <li><strong>&nbsp;导入配置</strong></li> </ul> <p>点击右上角的 导入配置 ，可选择nacos支持的配置文件格式进行导入文件并恢复为nacos配置集。</p> <p><img loading="lazy" decoding="async" alt="" height="536" src="http://img.555519.xyz/uploads3/20220901/99b6eddfa3be4d36a98ab8f217299309.jpg"></p> <ul> <li><strong>克隆配置集</strong></li> </ul> <p>选择所需配置文件记录，点击<strong>克隆</strong>&nbsp;按钮，在弹出的克隆对话框中，选择将配置迁移至其他namespace中。如下图红框所示。</p> <p><img loading="lazy" decoding="async" alt="" height="585" src="http://img.555519.xyz/uploads3/20220901/09c45912bc120579f0722fae2bde816c.jpg"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-87568.htm">猫咪体外驱虫哪个牌子好用（猫咪体外驱虫用什么牌子）</a></p>
+                                        <p>下一个：<a href="/news/article-88313.htm">动物疫苗销售许可证如何办理的呢图片（动物疫苗经销商资格）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-71013.htm" title="丹阳有没有宠物市场（丹阳口碑最好的宠物医院）">丹阳有没有宠物市场（丹阳口碑最好的宠物医院）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-27-mihomo-node-share.htm" title="3月27日→21.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址">3月27日→21.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-67756.htm" title="太原哪里可以领养狗 太原哪里可以领养狗狗">太原哪里可以领养狗 太原哪里可以领养狗狗</a></li>
+                        <li class="py-2"><a href="/news/article-87567.htm" title="猫不打疫苗危险吗视频（猫不打疫苗有啥危害）">猫不打疫苗危险吗视频（猫不打疫苗有啥危害）</a></li>
+                        <li class="py-2"><a href="/news/article-82556.htm" title="React-class——React表单与事件（受控组件与非受控组件、事件类型、事件对象、事件绑定）、React组件生命周期、面试">React-class——React表单与事件（受控组件与非受控组件、事件类型、事件对象、事件绑定）、React组件生命周期、面试</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-mihomo-windows.htm" title="3月8日→21.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址">3月8日→21.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-mihomo-node.htm" title="3月30日→22.5M/S|2025年最新免费节点Clash Mihomo订阅链接地址">3月30日→22.5M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-75019.htm" title="公务员2021年国考报名时间（2021公务员考试国考报名时间）">公务员2021年国考报名时间（2021公务员考试国考报名时间）</a></li>
+                        <li class="py-2"><a href="/news/article-77044.htm" title="沈阳宠物免费领养赠送（沈阳宠物狗免费领养）">沈阳宠物免费领养赠送（沈阳宠物狗免费领养）</a></li>
+                        <li class="py-2"><a href="/news/article-66503.htm" title="动物医院大众点评100字通用评论语怎么写 动物医院大众点评100字通用评论语怎么写的">动物医院大众点评100字通用评论语怎么写 动物医院大众点评100字通用评论语怎么写的</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                <p>
+                                    <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
