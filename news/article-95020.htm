@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashmihomo.github.io/news/article-95020.htm" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Android 自定义方形验证码输入框，仿滴滴、小篮单车</title>
+        <meta name="description" content="效果图   GIF图不是很清晰，下面是截图 思路 1 . 每一个输入框其实都是一个EditText，for循环创建并插入到LinearLayout中。 privatevoidinitView() {f" />
+        <link rel="icon" href="/assets/website/img/clashmihomo/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Mihomo免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashmihomo.github.io/news/article-95020.htm" />
+    <meta property="og:site_name" content="Clash Mihomo免费机场订阅节点官网" />
+    <meta property="og:title" content="Android 自定义方形验证码输入框，仿滴滴、小篮单车" />
+    <meta property="og:image" content="https://clashmihomo.github.io/uploads/20240920-1/6e6b41b69dacff4457b2b7a0031e0f09.webp" />
+        <meta property="og:release_date" content="2025-04-13T07:19:17" />
+    <meta property="og:updated_time" content="2025-04-13T07:19:17" />
+        <meta property="og:description" content="效果图   GIF图不是很清晰，下面是截图 思路 1 . 每一个输入框其实都是一个EditText，for循环创建并插入到LinearLayout中。 privatevoidinitView() {f" />
+        
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/kitecx-icons/style.css">
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashmihomo/kitecx-responsive.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Android 自定义方形验证码输入框，仿滴滴、小篮单车">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN7DJKT3D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZN7DJKT3D0');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+                <header class="main-header clearfix">
+            <div class="container">
+                <div class="main-menu-wrapper">
+                    <div class="main-header__logo">
+                                                <a href="/">
+                            <span>Clash Mihomo</span>
+                        </a>
+                                            </div>
+                    <div class="main-menu-wrapper__bottom">
+                        <nav class="main-menu">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+        <!--Page Header Start-->
+        <section class="page-header" style="background-image: url(/assets/website/img/clashmihomo/backgrounds/page-header-bg.jpg);">
+            <div class="page-header-border"></div>
+            <div class="page-header-border page-header-border-two"></div>
+            <div class="page-header-border page-header-border-three"></div>
+            <div class="page-header-border page-header-border-four"></div>
+            <div class="page-header-border page-header-border-five"></div>
+            <div class="page-header-border page-header-border-six"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h1>Android 自定义方形验证码输入框，仿滴滴、小篮单车</h1>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">首页</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><span>/</span></li>
+                        <li>正文</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+        <!--Welcome One Start-->
+        <section class="welcome-one py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2 id="效果图">效果图</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/f4cbc41354fbdd26388d7e06cd931a37.jpg" alt="Android 自定义方形验证码输入框，仿滴滴、小篮单车"></p> <hr/> <p>GIF图不是很清晰，下面是截图<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/bd221564d327ddf1797aba9d9adad20e.jpg" alt="Android 自定义方形验证码输入框，仿滴滴、小篮单车"></p> <h2 id="思路">思路</h2> <p>1 . 每一个输入框其实都是一个<code>EditText</code>，<code>for</code>循环创建并插入到<code>LinearLayout</code>中。</p> <pre class="prettyprint"><code class="hljs cs"><span class="hljs-keyword">private</span><span class="hljs-keyword">void</span><span class="hljs-title">initView</span>() {<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>; i &lt; mEtNumber; i++) {             EditText editText =<span class="hljs-keyword">new</span> EditText(mContext);             initEditText(editText, i);<span class="hljs-comment">//editText初始化</span>             addView(editText);<span class="hljs-keyword">if</span> (i ==<span class="hljs-number">0</span>) {<span class="hljs-comment">//设置第一个editText获取焦点</span>                 editText.setFocusable(<span class="hljs-keyword">true</span>);             }         }     }</code></pre> <p>2 . 给每个<code>editText</code>设置<code>TextWatcher</code>监听，检测到被输入一个字符后，就把焦点移交给下一个<code>editText</code></p> <pre class="prettyprint"><code class="hljs java"><span class="hljs-annotation">@Override</span><span class="hljs-keyword">public</span><span class="hljs-keyword">void</span><span class="hljs-title">afterTextChanged</span>(Editable s) {<span class="hljs-keyword">if</span> (s.length() !=<span class="hljs-number">0</span>) {             focus();         }     }</code></pre> <pre class="prettyprint"><code class="hljs cs"><span class="hljs-keyword">private</span><span class="hljs-keyword">void</span><span class="hljs-title">focus</span>() {<span class="hljs-keyword">int</span> count = getChildCount();         EditText editText;<span class="hljs-comment">//利用for循环找出还最前面那个还没被输入字符的EditText，并把焦点移交给它。</span><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>; i &lt; count; i++) {             editText = (EditText) getChildAt(i);<span class="hljs-keyword">if</span> (editText.getText().length() &lt;<span class="hljs-number">1</span>) {                 editText.setCursorVisible(<span class="hljs-keyword">true</span>);                 editText.requestFocus();<span class="hljs-keyword">return</span>;             }<span class="hljs-keyword">else</span> {                 editText.setCursorVisible(<span class="hljs-keyword">false</span>);             }         }<span class="hljs-comment">//如果最后一个输入框有字符，则返回结果</span>         EditText lastEditText = (EditText) getChildAt(mEtNumber -<span class="hljs-number">1</span>);<span class="hljs-keyword">if</span> (lastEditText.getText().length() &gt;<span class="hljs-number">0</span>) {             getResult();         }     }</code></pre> <p>3 . 同理，给每一个<code>editText</code>设置<code>View.OnKeyListener</code>监听，用于检测删除键。</p> <pre class="prettyprint"><code class="hljs java"><span class="hljs-annotation">@Override</span><span class="hljs-keyword">public</span><span class="hljs-keyword">boolean</span><span class="hljs-title">onKey</span>(View v,<span class="hljs-keyword">int</span> keyCode, KeyEvent event) {<span class="hljs-keyword">if</span> (keyCode == KeyEvent.KEYCODE_DEL) {             backFocus();         }<span class="hljs-keyword">return</span><span class="hljs-keyword">false</span>;     }</code></pre> <pre class="prettyprint"><code class="hljs cs"><span class="hljs-keyword">private</span><span class="hljs-keyword">void</span><span class="hljs-title">backFocus</span>() {<span class="hljs-comment">//博主手机不好，经常点一次却触发两次`onKey`事件，就设置了一个防止多点击，间隔100毫秒。</span><span class="hljs-keyword">long</span> startTime = System.currentTimeMillis();         EditText editText;<span class="hljs-comment">//循环检测有字符的`editText`，把其置空，并获取焦点。</span><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = mEtNumber -<span class="hljs-number">1</span>; i &gt;=<span class="hljs-number">0</span>; i--) {             editText = (EditText) getChildAt(i);<span class="hljs-keyword">if</span> (editText.getText().length() &gt;=<span class="hljs-number">1</span> &amp;&amp; startTime - endTime &gt;<span class="hljs-number">100</span>) {                 editText.setText(<span class="hljs-string">""</span>);                 editText.setCursorVisible(<span class="hljs-keyword">true</span>);                 editText.requestFocus();                 endTime = startTime;<span class="hljs-keyword">return</span>;             }         }     }</code></pre> <p>4 .要让<code>editText</code>依次获取焦点，防止出现第一个<code>editText</code>还没输入就能输入第二个<code>editText</code>的情况。<br /> 同理，需要<code>View.OnFocusChangeListener</code>监听。</p> <pre class="prettyprint"><code class="hljs java"><span class="hljs-comment">//获取焦点后随即`focus()`方法，进行焦点移交。</span><span class="hljs-annotation">@Override</span><span class="hljs-keyword">public</span><span class="hljs-keyword">void</span><span class="hljs-title">onFocusChange</span>(View v,<span class="hljs-keyword">boolean</span> hasFocus) {<span class="hljs-keyword">if</span> (hasFocus) {             focus();          }     }</code></pre> <h2 id="源码及用法详见github">源码及用法详见GitHub。</h2> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/jiaoyaning/VerificationCodeView"  target="_blank" rel="nofollow">Android开发 自定义方形验证码输入框</a></p> <hr/> <p>如果对您有帮助的话，还请给个收藏或者star，谢谢！</p> <hr/> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-94371.htm">为什么猫不能打有什么说法么（为什么家猫打不得）</a></p>
+                                        <p>下一个：<a href="/news/article-95021.htm">猫粮制造机 猫粮制造机器</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-96504.htm" title="小型饲料颗粒机器多少钱-台（小型颗粒饲料机械）">小型饲料颗粒机器多少钱-台（小型颗粒饲料机械）</a></li>
+                        <li class="py-2"><a href="/news/article-70352.htm" title="动物疫苗的重要性有哪些呢（动物疫苗的概念）">动物疫苗的重要性有哪些呢（动物疫苗的概念）</a></li>
+                        <li class="py-2"><a href="/news/article-74315.htm" title="养猫是不是对人不好（养猫对人有什么影响吗）">养猫是不是对人不好（养猫对人有什么影响吗）</a></li>
+                        <li class="py-2"><a href="/news/article-81858.htm" title="动物疫苗的使用方法有哪些种类及作用图片（动物疫苗的使用方法有哪些种类及作用图片视频）">动物疫苗的使用方法有哪些种类及作用图片（动物疫苗的使用方法有哪些种类及作用图片视频）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-today-mihomo-node.htm" title="3月20日→23M/S|2025年最新免费节点Clash Mihomo订阅链接地址">3月20日→23M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-82557.htm" title="狗粮排名前十品牌价格及图片（狗粮排名前十品牌知乎）">狗粮排名前十品牌价格及图片（狗粮排名前十品牌知乎）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-9-free-mihomo-node.htm" title="4月9日→19M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月9日→19M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-78411.htm" title="MySQL数据库生成某一年的日历存储过程_在线工具">MySQL数据库生成某一年的日历存储过程_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-79097.htm" title="沈阳宠物市场（沈阳宠物市场搬哪去了）">沈阳宠物市场（沈阳宠物市场搬哪去了）</a></li>
+                        <li class="py-2"><a href="/news/article-75019.htm" title="公务员2021年国考报名时间（2021公务员考试国考报名时间）">公务员2021年国考报名时间（2021公务员考试国考报名时间）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Welcome One End-->
+    </div><!-- /.page-wrapper -->
+        <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer-bottom__inner">
+                            <div class="site-footer-bottom__left">
+                                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                <p>
+                                    <a href="/">Clash Mihomo免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                            <ul class="site-footer-bottom__menu list-unstyled">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"></span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">Clash Mihomo</a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="side-menu__block">
+        <div class="side-menu__block-overlay custom-cursor__overlay side-menu__toggler">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <p class="side-menu__block__text site-footer__copy-text">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jarallax/jarallax.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/nouislider/nouislider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/odometer/odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/swiper/swiper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wnumb/wNumb.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/wow/wow.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/isotope/isotope.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/countdown/countdown.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/website/js/frontend/clashmihomo/twentytwenty/jquery.event.move.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <!-- template js -->
+    <script src="/assets/website/js/frontend/clashmihomo/kitecx.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
