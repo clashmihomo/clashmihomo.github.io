@@ -294,44 +294,9 @@ A4：有被封禁的风险，节点活跃周期通常较短，需要定期更换
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 的节点排序依据是什么？</h5></div>
-    <div class="panel-body">
-        Nekoray 默认按节点延迟排序。用户可以自定义排序规则，如按订阅来源、名称或连接成功率排列，从而快速找到性能最佳或最常用的节点。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray PAC 模式如何提高访问速度和便利性？</h5></div>
-    <div class="panel-body">
-        PAC 模式根据规则动态判断流量是否走代理，无需手动切换节点。适合国内外混合访问场景，提高网页和视频访问速度与稳定性，减少操作错误导致的访问失败。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 的用户管理可以分组吗？</h5></div>
-    <div class="panel-body">
-        支持用户分组管理，可为不同组设置独立带宽、流量配额和节点访问权限。分组管理便于大规模用户维护，确保每个组的网络资源合理分配，提升整体管理效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan-Go 的 MUX 功能能降低延迟吗？</h5></div>
-    <div class="panel-body">
-        启用 MUX 后，多条 TCP/QUIC 连接可以共享单个隧道，减少握手次数和连接延迟。对于频繁短连接应用如游戏或社交软件，可以明显提升响应速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 无法代理游戏怎么办？</h5></div>
     <div class="panel-body">
         若 Netch 无法代理游戏，需检查游戏进程是否被正确捕获，以及防火墙是否阻止了 TUN 模式。可尝试以管理员身份运行程序，或切换为 Socks 模式重新导入节点。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 如何管理多协议节点？</h5></div>
-    <div class="panel-body">
-        Nekobox 可同时管理 Shadowsocks、VMess、Trojan 等多协议节点。结合策略组和分流规则，可实现不同流量走不同节点，提升网络效率和管理便利性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 的多机场订阅如何整合？</h5></div>
-    <div class="panel-body">
-        Hiddify Next 提供合并订阅功能，可将多个链接导入同一配置，自动去重并分类节点。用户可设置优先级与标签，方便快速选择不同提供商的线路，提升连接灵活性与冗余度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 如何管理不同用户的带宽？</h5></div>
-    <div class="panel-body">
-        管理员可以为每个用户设置独立带宽限制和流量配额。超出配额时可自动阻断或降速，确保服务器资源合理分配，避免单用户占用过多带宽，保障整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess 使用 AEAD 加密的优势是什么？</h5></div>
@@ -339,9 +304,44 @@ A4：有被封禁的风险，节点活跃周期通常较短，需要定期更换
         AEAD 加密提供更强的安全性和抗重放攻击能力，同时隐藏流量特征，降低被 DPI 检测风险。在高封锁环境下使用，可提升连接稳定性和长期可用性。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray PAC 模式如何提高访问速度和便利性？</h5></div>
+    <div class="panel-body">
+        PAC 模式根据规则动态判断流量是否走代理，无需手动切换节点。适合国内外混合访问场景，提高网页和视频访问速度与稳定性，减少操作错误导致的访问失败。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekobox 如何管理多协议节点？</h5></div>
+    <div class="panel-body">
+        Nekobox 可同时管理 Shadowsocks、VMess、Trojan 等多协议节点。结合策略组和分流规则，可实现不同流量走不同节点，提升网络效率和管理便利性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 如何管理不同用户的带宽？</h5></div>
+    <div class="panel-body">
+        管理员可以为每个用户设置独立带宽限制和流量配额。超出配额时可自动阻断或降速，确保服务器资源合理分配，避免单用户占用过多带宽，保障整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>如何用 iptables 限制 V2Ray 服务的访问来源？</h5></div>
     <div class="panel-body">
-        使用 iptables 规则仅允许可信 IP 或 CDN 的中转 IP 访问服务端口，例如 `iptables -A INPUT -p tcp -s <trusted_ip> --dport 443 -j ACCEPT`，并在默认策略下拒绝其他来源，从而降低被扫描与滥用风险。    </div>
+        使用 iptables 规则仅允许可信 IP 或 CDN 的中转 IP 访问服务端口，例如 `iptables -A INPUT -p tcp -s <trusted_ip> --dport 443 -j ACCEPT`，并在默认策略下拒绝其他来源，从而降低被扫描与滥用风险。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 的节点排序依据是什么？</h5></div>
+    <div class="panel-body">
+        Nekoray 默认按节点延迟排序。用户可以自定义排序规则，如按订阅来源、名称或连接成功率排列，从而快速找到性能最佳或最常用的节点。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 的多机场订阅如何整合？</h5></div>
+    <div class="panel-body">
+        Hiddify Next 提供合并订阅功能，可将多个链接导入同一配置，自动去重并分类节点。用户可设置优先级与标签，方便快速选择不同提供商的线路，提升连接灵活性与冗余度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan-Go 的 MUX 功能能降低延迟吗？</h5></div>
+    <div class="panel-body">
+        启用 MUX 后，多条 TCP/QUIC 连接可以共享单个隧道，减少握手次数和连接延迟。对于频繁短连接应用如游戏或社交软件，可以明显提升响应速度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 的用户管理可以分组吗？</h5></div>
+    <div class="panel-body">
+        支持用户分组管理，可为不同组设置独立带宽、流量配额和节点访问权限。分组管理便于大规模用户维护，确保每个组的网络资源合理分配，提升整体管理效率。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -370,16 +370,16 @@ A4：有被封禁的风险，节点活跃周期通常较短，需要定期更换
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-4-19-mihomo-node-share.htm" title="4月19日→18.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月19日→18.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-9-free-node-subscribe.htm" title="4月9日→19M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月9日→19M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-13-mihomo-node.htm" title="4月13日→20.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月13日→20.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-12-mihomo-node.htm" title="4月12日→21.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月12日→21.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-28-free-high-speed-nodes.htm" title="4月28日→19.8M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月28日→19.8M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-2-free-high-speed-nodes.htm" title="5月2日→21.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址">5月2日→21.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-11-today-mihomo-node.htm" title="4月11日→20.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月11日→20.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-4-mihomo-node.htm" title="5月4日→20.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址">5月4日→20.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-16-free-subscribe-node.htm" title="4月16日→20.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月16日→20.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-18-free-high-speed-nodes.htm" title="4月18日→22.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月18日→22.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-8-node-share-links.htm" title="5月8日→18.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址">5月8日→18.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-19-mihomo-node-share.htm" title="4月19日→18.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月19日→18.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-28-free-high-speed-nodes.htm" title="4月28日→19.8M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月28日→19.8M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-6-free-subscribe-node.htm" title="5月6日→21.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址">5月6日→21.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-5-free-mihomo-node.htm" title="5月5日→19.4M/S|2025年最新免费节点Clash Mihomo订阅链接地址">5月5日→19.4M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-13-mihomo-node.htm" title="4月13日→20.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月13日→20.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-20-node-share.htm" title="4月20日→21.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月20日→21.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-15-mihomo-node.htm" title="4月15日→19.8M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月15日→19.8M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-24-node-share-links.htm" title="4月24日→20.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址">4月24日→20.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -391,10 +391,10 @@ A4：有被封禁的风险，节点活跃周期通常较短，需要定期更换
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">22</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                     </ul>
     </div>
