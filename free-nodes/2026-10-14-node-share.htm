@@ -391,39 +391,9 @@ VPN 加密整个网络流量，代理则只转发特定应用的请求。VPN适�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 无法识别某游戏流量时应如何处理？</h5></div>
-    <div class="panel-body">
-        请确认已启用 TUN 模式并在游戏路径中选择正确的执行文件。部分游戏使用反作弊系统需管理员权限运行 Netch；若仍无法识别，可尝试手动添加端口规则。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的节点测速结果如何优化网络体验？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 测量节点延迟和丢包率，将延迟低的节点优先使用。结合策略组和分流规则，可提升网页浏览、视频播放和游戏的访问速度和稳定性，优化整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>如何备份 Clash 配置文件？</h5></div>
     <div class="panel-body">
         Clash 的配置文件通常位于程序目录或配置文件夹中（如 Windows 下的 .config/clash）。用户可直接复制该 YAML 文件以备份，也可将订阅链接保存，便于后续恢复或在其他设备上同步使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS 的 Flow 参数有什么作用？</h5></div>
-    <div class="panel-body">
-        Flow 参数用于控制 VLESS 的传输模式，如 XTLS Vision 或 Reality 模式。它能影响性能、安全性与兼容性，需根据客户端支持情况正确匹配配置。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 是什么？</h5></div>
-    <div class="panel-body">
-        Hiddify Next 是基于 sing-box 的多协议代理客户端，适用于 Android、Windows 等平台。它整合了 Vless、VMess、Trojan、Hysteria 等协议，支持自动测速和订阅转换，是移动端非常流行的代理工具。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray QUIC 传输适合什么网络环境？</h5></div>
-    <div class="panel-body">
-        QUIC 基于 UDP 支持多路复用和零握手，降低延迟，提高吞吐量。适合高丢包、不稳定网络环境，可保证视频、游戏和即时通讯流量的稳定性和流畅体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何将 Windows 上的 V2Ray 与 WSL 环境联合调试？</h5></div>
-    <div class="panel-body">
-        在 WSL 内运行需要的调试工具并通过 localhost 或将 V2Ray 监听地址绑定为 0.0.0.0，然后在 Windows 与 WSL 之间配置端口映射。注意 Windows 防火墙规则需允许 WSL 与 Windows 进程通信。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS + XTLS 对高延迟网络有哪些优化？</h5></div>
@@ -431,14 +401,44 @@ VPN 加密整个网络流量，代理则只转发特定应用的请求。VPN适�
         XTLS 模式减少握手和加密开销，适合高延迟或不稳定网络环境。结合策略组和节点切换，可提高网页浏览、视频播放和游戏的稳定性和流畅度，改善用户体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 支持哪些类型的重写脚本？</h5></div>
+    <div class="panel-heading"><h5>Netch 无法识别某游戏流量时应如何处理？</h5></div>
     <div class="panel-body">
-        QuantumultX 支持 JavaScript 脚本，可修改请求头、响应内容、自动跳转、广告屏蔽和定制流量处理。结合策略组，可实现高度个性化的网络访问控制和优化。<hr />    </div>
+        请确认已启用 TUN 模式并在游戏路径中选择正确的执行文件。部分游戏使用反作弊系统需管理员权限运行 Netch；若仍无法识别，可尝试手动添加端口规则。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS 的 Flow 参数有什么作用？</h5></div>
+    <div class="panel-body">
+        Flow 参数用于控制 VLESS 的传输模式，如 XTLS Vision 或 Reality 模式。它能影响性能、安全性与兼容性，需根据客户端支持情况正确匹配配置。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 的节点测速结果如何优化网络体验？</h5></div>
+    <div class="panel-body">
+        Shadowrocket 测量节点延迟和丢包率，将延迟低的节点优先使用。结合策略组和分流规则，可提升网页浏览、视频播放和游戏的访问速度和稳定性，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray QUIC 传输适合什么网络环境？</h5></div>
+    <div class="panel-body">
+        QUIC 基于 UDP 支持多路复用和零握手，降低延迟，提高吞吐量。适合高丢包、不稳定网络环境，可保证视频、游戏和即时通讯流量的稳定性和流畅体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 如何实现延迟最低节点自动切换？</h5></div>
     <div class="panel-body">
-        WinXray 支持节点延迟检测和策略组配置，可自动将流量切换至延迟最低的节点。用户无需手动选择，提高游戏、视频和网页访问速度及稳定性，优化整体网络体验。    </div>
+        WinXray 支持节点延迟检测和策略组配置，可自动将流量切换至延迟最低的节点。用户无需手动选择，提高游戏、视频和网页访问速度及稳定性，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何将 Windows 上的 V2Ray 与 WSL 环境联合调试？</h5></div>
+    <div class="panel-body">
+        在 WSL 内运行需要的调试工具并通过 localhost 或将 V2Ray 监听地址绑定为 0.0.0.0，然后在 Windows 与 WSL 之间配置端口映射。注意 Windows 防火墙规则需允许 WSL 与 Windows 进程通信。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 是什么？</h5></div>
+    <div class="panel-body">
+        Hiddify Next 是基于 sing-box 的多协议代理客户端，适用于 Android、Windows 等平台。它整合了 Vless、VMess、Trojan、Hysteria 等协议，支持自动测速和订阅转换，是移动端非常流行的代理工具。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>QuantumultX 支持哪些类型的重写脚本？</h5></div>
+    <div class="panel-body">
+        QuantumultX 支持 JavaScript 脚本，可修改请求头、响应内容、自动跳转、广告屏蔽和定制流量处理。结合策略组，可实现高度个性化的网络访问控制和优化。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -486,16 +486,16 @@ VPN 加密整个网络流量，代理则只转发特定应用的请求。VPN适�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-9-12-free-subscribe-node.htm" title="9月12日→20.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址">9月12日→20.9M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/latest-mihomo-node-2026-10-11.htm" title="10月11日→22.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址">10月11日→22.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-4-free-subscribe-node.htm" title="10月4日→19.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址">10月4日→19.1M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-19.htm" title="9月19日→20.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址">9月19日→20.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/mihomo-windows-2026-9-23.htm" title="9月23日→21.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址">9月23日→21.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-10-17.htm" title="10月17日→22.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址">10月17日→22.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-3.htm" title="10月3日→22.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址">10月3日→22.6M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-28-today-mihomo-node.htm" title="9月28日→22M/S|2025年最新免费节点Clash Mihomo订阅链接地址">9月28日→22M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/latest-mihomo-node-2026-9-13.htm" title="9月13日→22.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址">9月13日→22.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-6-free-node-subscribe.htm" title="10月6日→18.4M/S|2025年最新免费节点Clash Mihomo订阅链接地址">10月6日→18.4M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/mihomo-node-share-2026-10-1.htm" title="10月1日→18.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址">10月1日→18.2M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-mihomo-node.htm" title="9月2日→20M/S|2025年最新免费节点Clash Mihomo订阅链接地址">9月2日→20M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/latest-mihomo-node-2026-10-21.htm" title="10月21日→19.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址">10月21日→19.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/mihomo-node-share-2026-9-3.htm" title="9月3日→23M/S|2025年最新免费节点Clash Mihomo订阅链接地址">9月3日→23M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-18-mihomo-node.htm" title="9月18日→22.4M/S|2025年最新免费节点Clash Mihomo订阅链接地址">9月18日→22.4M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-28-today-mihomo-node.htm" title="9月28日→22M/S|2025年最新免费节点Clash Mihomo订阅链接地址">9月28日→22M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-16-mihomo-github.htm" title="10月16日→22.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址">10月16日→22.7M/S|2025年最新免费节点Clash Mihomo订阅链接地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -507,7 +507,7 @@ VPN 加密整个网络流量，代理则只转发特定应用的请求。VPN适�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
